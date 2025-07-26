@@ -8,9 +8,38 @@
 <body>
     <h1>Exercício 007 - lógica de programação no JS</h1>
     <p>
-
+        Crie um algoritmo que leia um número real e mostre na tela o seu dobro e a sua terça parte.</br>
+        Ex:</br>
+        Digite um número: 3.5</br>
+        O dobro de 3.5 é 7.0</br>
+        A terça parte de 3.5 é 1.16666
     </p>
 
     <h2>Exercício resolvido</h2>
+    <label for="num">Digite um número:</label>
+    <input type="number" id="num">
+    <button onclick="calcular()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcular(){
+            let num = Number(document.getElementById('num').value);
+
+            let dobroValor = calcularDobro(num);
+            let tercaValor = calcularTerca(num);
+
+            let mensagem = `O dobro de ${num} é ${dobroValor} e a terça parte é ${tercaValor}`;
+            document.getElementById("resultado").textContent = mensagem;
+        }
+
+        function calcularDobro(num){
+            return num*2;
+        }
+
+        function calcularTerca(num){
+            return num/3;
+        }
+    </script>
 </body>
 </html>

@@ -3,9 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Exercício 006</title>
 </head>
 <body>
-    
+    <h1>Exercício 006 - lógica de programação no JS</h1>
+    <p>
+        Faça um programa que leia um número inteiro e mostre o seu antecessor e seu sucessor.</br>
+        Ex: </br>
+        Digite um número: 9</br>
+        O antecessor de 9 é 8</br>
+        O sucessor de 9 é 10
+    </p>
+
+    <h2>Exercício resolvido</h2>
+    <label for="num">Digite um número:</label>
+    <input type="number" id="num">
+    <button onclick="funcaoAntecessorSucessor()">Enviar</button>
+
+    <p id="resposta"></p>
+
+    <script>
+        function funcaoAntecessorSucessor(){
+            let num = Number(document.getElementById('num').value);
+            let ant = num - 1;
+            let suc = num + 1;
+            let mensagem = `O antecessor de ${num} é o ${ant} e o sucessor é o ${suc}`;
+            document.getElementById("resposta").textContent = mensagem;
+        }
+    </script>
 </body>
 </html>

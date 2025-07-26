@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 005</title>
+</head>
+<body>
+    <h1>Exercício 005 - lógica de programação no JS</h1>
+    <p>
+        Faça um programa que leia as duas notas de um aluno em uma matéria e mostre na tela a sua média na disciplina. </br>
+        Ex: </br>
+        Nota 1: 4.5 </br>
+        Nota 2: 8.5 </br>
+        A média entre 4.5 e 8.5 é igual a 6.5
+    </p>
+
+    <h2>Exercício resolvido:</h2>
+    <label for="nota1">Nota 1:</label>
+    <input type="number" id="nota1"></br>
+    <label for="nota2">Nota 2:</label>
+    <input type="number" id="nota2"></br>
+    <button onclick="media()">Enviar</button>
+
+    <p id="resposta"></p>
+
+    <script>
+        function media(){
+            let nota1 = Number(document.getElementById('nota1').value);
+            let nota2 = Number(document.getElementById('nota2').value);
+            let media = (nota1 + nota2)/2;
+            let mensagem = `A média entre ${nota1} e ${nota2} é igual a ${media}`;
+            document.getElementById("resposta").textContent = mensagem;
+        }
+    </script>
+</body>
+</html>

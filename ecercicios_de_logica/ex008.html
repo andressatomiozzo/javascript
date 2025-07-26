@@ -8,9 +8,47 @@
 <body>
     <h1>Exercício 008 - lógica de programação no JS</h1>
     <p>
-
+        Desenvolva um programa que leia uma distância em metros e mostre os valores relativos em outras medidas.</br>
+        Ex:</br>
+        Digite uma distância em metros: 85.72</br>
+        A distância de 85.7m corresponde a:</br>
+        0.18572Km</br>
+        1.8572Hm</br>
+        18.572Dam</br>
+        1857.2dm</br>
+        18572.0cm</br>
+        185720.0mm
     </p>
 
     <h2>Exercício resolvido</h2>
+    <label for="dist">Digite uma distância em metros:</label>
+    <input type="number" id="dist">
+    <button onclick="calcular()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcular(){
+            let dist = Number(document.getElementById("dist").value);
+            let km = dist/1000
+            let Hm = dist/100
+            let Dam = dist/10
+            let dm = dist * 10
+            let cm = dist * 100
+            let mm = dist * 1000
+
+            let mensagem = `
+                A distância de ${dist}m corresponde a:<br>
+                ${km} km<br> 
+                ${Hm} Hm<br>
+                ${Dam} Dam<br>
+                ${dm} dm<br>
+                ${cm} cm<br>
+                ${mm} mm<br>
+            `;
+            
+            document.getElementById("resultado").innerHTML = mensagem
+        }
+    </script>
 </body>
 </html>

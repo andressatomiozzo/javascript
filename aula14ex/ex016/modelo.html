@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super contador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Vamos contar</h1>
+    </header>
+    <section>
+        <div>
+            <label for="txtni">Início: </label>
+            <input type="number" name="txtni" id="txtni">
+        </div>
+        <div>
+            <label for="txtnf">Fim: </label>
+            <input type="number" name="txtnf" id="txtnf">
+        </div>
+        <div>
+            <label for="txtnp">Passo: </label>
+            <input type="number" name="txtnp" id="txtnp">
+        </div>
+        <div>
+            <input type="button" value="Contar" onclick="contar()">
+        </div>
+        <div id="area">
+            <p>Preparando a contagem...</p>
+        </div>
+        
+    </section>
+    <footer>
+        <p>&copy; CursoemVídeo</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

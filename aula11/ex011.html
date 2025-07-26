@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Você é brasileiro ou estrangeiro?</h1>
+    Em qual país você nasceu? <input type="text" name="txt" id="txt" > <input type="button" value="Enviar" onclick="clicar()">
+    <div id="area">
+
+    </div>
+    <script>
+        function clicar(){
+            var txts = window.document.getElementById('txt').value
+            var area = window.document.getElementById('area')
+            if (txts == 'Brasil'){
+                area.innerHTML = 'Você é brasileiro'
+            } else {
+                area.innerHTML = 'Você é estrangeiro'
+            }
+        }
+    </script>
+</body>
+</html>

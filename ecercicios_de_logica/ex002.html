@@ -19,9 +19,9 @@
     <p id="mensagem"></p>
     <script>
         function mostrarMensagem(){
-            let nome = document.getElementById("nome").value;
+            let nome = document.getElementById("nome").value; //.value: Pegar o texto digitado no ID nome
             let mensagem = `Olá ${nome}, é um prazer te conhecer!`;
-            document.getElementById("mensagem").textContent = mensagem;
+            document.getElementById("mensagem").textContent = mensagem; //.textContent: muda o conteúdo do texto
         }
     </script>
 </body>

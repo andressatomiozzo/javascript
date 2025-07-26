@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 004</title>
+</head>
+<body>
+    <h1>Exercício 004 - lógica de programação no JS</h1>
+    <p>Desenvolva um algoritmo que leia dois números inteiros e mostre o somatório entre eles.</br>
+        Ex:</br>
+        Digite um valor: 8</br>
+        Digite outro valor: 5</br>
+        A soma entre 8 e 5 é igual a 13
+    </p>
+
+    <label for="n1">Digite um valor:</label>
+    <input type="number" id="n1"></br>
+    <label for="n2">Digite outro valor:</label>
+    <input type="number" id="n2"></br>
+    <button onclick="somar()">Enviar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function somar(){
+            let n1 = document.getElementById('n1').value;
+            let n2 = document.getElementById('n2').value;
+            let soma = Number(n1) + Number(n2);
+            let mensagem = `A soma entre ${n1} e ${n2} é igual a ${soma}`;
+            document.getElementById("resultado").textContent = mensagem;
+        }
+    </script>
+</body>
+</html>

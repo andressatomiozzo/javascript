@@ -9,10 +9,29 @@
     <h1>Exercício 010 - lógica de programação no JS</h1>
 
     <p>
-        
+      Faça um algoritmo que leia a largura e altura de uma parede, calcule e mostre a área a ser pintada e a quantidade de tinta necessária para o serviço, sabendo que cada litro de tinta pinta uma área de 2metros quadrados.  
     </p>
 
     <h2>Exercício resolvido</h2>
+    <label for="largura">Digite a largura da parede:</label>
+    <input type="number" id="largura"></br>
+    <label for="altura">Digite a altura da parede: </label>
+    <input type="number" id="altura"></br>
+    <button onclick="calcular()">Calcular</button>
 
+    <p id="resultado"></p>
+
+    <script>
+        function calcular(){
+            let largura = Number(document.getElementById("largura").value);
+            let altura = Number(document.getElementById('altura').value);
+            let area = largura * altura;
+            let tinta = area/2;
+
+            let mensagem = `A quantidade de tinta para pintar ${area} m2 é de ${tinta} L`;
+
+            document.getElementById("resultado").textContent = mensagem;
+        }
+    </script>
 </body>
 </html>

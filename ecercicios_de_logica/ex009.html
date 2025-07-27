@@ -9,10 +9,23 @@
     <h1>Exercício 009 - lógica de programação no JS</h1>
 
     <p>
-        
+        Faça um algoritmo que leia quanto dinheiro uma pessoa tem na carteira (em R$) e mostre quantos dólares ela pode comprar. Considere US$1,00 = R$3,45.
     </p>
 
     <h2>Exercício resolvido</h2>
+    <label for="reais">Quantidade em reais: R$</label>
+    <input type="number" id="reais">
+    <button onclick="calcular()">Calcular</button>
 
+    <p id="resultado"></p>
+
+    <script>
+        function calcular(){
+            let reais = Number(document.getElementById("reais").value)
+            let dolar = reais * 3.45
+            let mensagem = `R$${reais} são aproximadamente US$${dolar}`
+            document.getElementById("resultado").textContent = mensagem
+        }
+    </script>
 </body>
 </html>

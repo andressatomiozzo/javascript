@@ -9,10 +9,31 @@
     <h1>Exercício 016 - lógica de programação no JS</h1>
 
     <p>
-        
+        Escreva um programa para calcular a redução do tempo de vida de um fumante. Pergunte a quantidade de cigarros fumados por dias e quantos anos ele já fumou. Considere que um fumante perde 10 min de vida a cada cigarro. Calcule quantos dias de vida um fumante perderá e exiba o total em dias.
     </p>
 
     <h2>Exercício resolvido</h2>
+    <label for="cigarrosDia">Quantos cigarros você fuma por dia?</label>
+    <input type="number" id="cigarrosDia"><br>
+    <label for="anos">Há quantos anos você fuma?</label>
+    <input type="number" id="anos"><br>
+    <button onclick="calcular()">Calcular</button>
 
+    <p id="resultado"></p>
+
+    <script>
+        function calcular(){
+            let cigarrosPorDia = Number(document.getElementById('cigarrosDia').value);
+            let anosFumando = Number(document.getElementById('anos').value);
+
+            let totalCigarros = cigarrosPorDia * 365 * anosFumando;
+            let minutosPerdidos = totalCigarros*10;
+            let diasPerdidos = minutosPerdidos/(60*24);
+
+            let mensagem = `O número de dias que você perdeu de vida foi de ${diasPerdidos.toFixed(2)}`;
+
+            document.getElementById('resultado').textContent = mensagem;
+        }
+    </script>
 </body>
 </html>

@@ -9,10 +9,32 @@
     <h1>Exercício 011 - lógica de programação no JS</h1>
 
     <p>
-        
+        Desenvolva uma lógica que leia os valores de A, B e C de uma equação do segundo grau e mostre o valor de Delta.
     </p>
 
     <h2>Exercício resolvido</h2>
+    <label for="a">Digite o valor de a: </label>
+    <input type="number" id="a"></br>
+    <label for="b">Digite o valor de b: </label>
+    <input type="number" id="b"></br>
+    <label for="c">Digite o valor de c: </label>
+    <input type="number" id="c"></br>
+    <button onclick="calcularDelta()">Calcular o valor de Delta</button>
 
+    <p id="resultado"></p>
+
+    <script>
+        function calcularDelta(){
+            let a = Number(document.getElementById('a').value);
+            let b = Number(document.getElementById('b').value);
+            let c = Number(document.getElementById('c').value);
+
+            let delta = b**2-4*a*c; //para potências: **
+
+            let mensagem = `O valor de delta é ${delta}`;
+
+            document.getElementById("resultado").textContent = mensagem;
+        }
+    </script>
 </body>
 </html>

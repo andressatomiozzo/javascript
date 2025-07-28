@@ -9,9 +9,31 @@
     <h1>Exercício 019 - lógica de programação no JS</h1>
 
     <p>
+        Crie um algoritmo que leia o nome e as duas notas de um aluno, calcule a sua média e mostre na tela. No final, analise a média e mostre se o aluno teve ou não um bom aproveitamento (se ficou acima da média 7.0).
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <label for="nota1">Digite a nota 1:</label>
+    <input type="number" id="nota1"><br>
+    <label for="nota2">Digite a nota 2:</label>
+    <input type="number" id="nota2"><br>
+    <button onclick="calcularMedia()">Calcular a média</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularMedia(){
+            let nota1 = Number(document.getElementById('nota1').value)
+            let nota2 = Number(document.getElementById('nota2').value)
+
+            let media = (nota1 + nota2)/2
+
+            if (media >= 7){
+                document.getElementById('resultado').textContent = `A sua média foi de ${media.toFixed(2)}, você foi aprovado.`
+            } else {
+                document.getElementById('resultado').textContent = `A sua média foi de ${media.toFixed(2)}, você está em recuperação.`
+            }
+        }
+    </script>
 </body>
 </html>

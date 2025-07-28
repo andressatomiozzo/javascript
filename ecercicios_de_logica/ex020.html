@@ -9,9 +9,26 @@
     <h1>Exercício 020 - lógica de programação no JS</h1>
 
     <p>
+        Desenvolva um programa que leia um número inteiro e mostre se ele é PAR ou ÍMPAR.
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <label for="num">Digite um número: </label>
+    <input type="number" id="num">
+    <button onclick="verificarParOuImpar()">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificarParOuImpar(){
+            let num = Number(document.getElementById('num').value)
+
+            if (num % 2 === 0){
+                document.getElementById('resultado').textContent = `O número digitado é PAR.`
+            } else {
+                document.getElementById('resultado').textContent = `O número digitado é ÍMPAR.`
+            }
+        }
+    </script>
 </body>
 </html>

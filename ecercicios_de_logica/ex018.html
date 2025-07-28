@@ -9,9 +9,27 @@
     <h1>Exercício 018 - lógica de programação no JS</h1>
 
     <p>
+        Faça um programa que leia o ano de nascimento de uma pessoa, calcule a idade dela e depois mostre se ela pode ou não votar.
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <label for="anoNasc">Digite o ano do seu nascimento:</label>
+    <input type="number" id="anoNasc">
+    <button onclick="calcularIdade()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularIdade(){
+            let anoNasc = Number(document.getElementById('anoNasc').value)
+            let idade = 2025 - anoNasc
+
+            if (idade <= 18){
+                document.getElementById('resultado').textContent = `Você tem ${idade} anos, não pode votar.`
+            } else {
+                document.getElementById('resultado').textContent = `Você tem ${idade} anos, o seu voto é obrigatório.`
+            }
+        }
+    </script>
 </body>
 </html>

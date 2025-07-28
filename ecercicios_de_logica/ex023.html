@@ -9,9 +9,40 @@
     <h1>Exercício 023 - lógica de programação no JS</h1>
 
     <p>
+        Numa promoção exclusiva para o Dia da Mulher, uma loja quer dar descontos para todos, mas especialmente para mulheres. Faça um programa que leia nome, sexo e o valor das compras do cliente e calcule o preço com desconto. Sabendo que: <br>
+        - Homens ganham 5% de desconto <br>
+        - Mulheres ganham 13% de desconto
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <label for="nome">Digite o seu nome:</label>
+    <input type="text" id="nome"><br>
+    <label for="sexo">Digite o seu sexo (F para faminino e M para masculino):</label>
+    <input type="text" id="sexo"><br>
+    <label for="valor">Digite o valor das compras: </label>
+    <input type="number" id="valor"><br>
+    <button onclick="calcularValorComDesconto()">Calcular valor com desconto</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularValorComDesconto(){
+            let nome = document.getElementById('nome').value
+            let sexo = document.getElementById('sexo').value 
+            let valor = Number(document.getElementById('valor').value)
+
+            if (sexo == 'F'){
+                let desconto = valor*0.13
+                let valorFinal = valor - desconto
+                document.getElementById('resultado').textContent = `Olá ${nome}, o seu desconto será de R${desconto}, o valor final é R$${valorFinal}`
+            } else if(sexo == 'M') {
+                let desconto = valor*0.05
+                let valorFinal = valor - desconto
+                document.getElementById('resultado').textContent = `Olá ${nome}, o seu desconto será de R${desconto}, o valor final é R$${valorFinal}`
+            } else {
+                document.getElementById('resultado').textContent = `Digite um caractere válido para "sexo": F ou M`
+            }
+        }
+    </script>
 </body>
 </html>

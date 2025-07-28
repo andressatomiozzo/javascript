@@ -9,9 +9,26 @@
     <h1>Exercício 021 - lógica de programação no JS</h1>
 
     <p>
+        Faça um algoritmo que leia um determinado ano e mostre se ele é ou não BISSEXTO.
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <label for="ano">Digite um ano:</label>
+    <input type="number" id="ano">
+    <button onclick="verificarAno()">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificarAno(){
+            let ano = Number(document.getElementById('ano').value)
+
+            if ((ano % 4 == 0 && ano % 100 !== 0) || ano % 400 == 0){
+                document.getElementById('resultado').textContent = `${ano} é bissexto`
+            } else {
+                document.getElementById('resultado').textContent = `${ano} não é bissexto`
+            }
+        }
+    </script>
 </body>
 </html>

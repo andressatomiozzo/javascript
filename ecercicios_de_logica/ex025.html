@@ -9,9 +9,32 @@
     <h1>Exercício 025 - lógica de programação no JS</h1>
 
     <p>
+        Crie um programa que leia o tamanho de três segmentos de reta. Analise seus comprimentos e diga se é possível formar um triângulo com essas retas. Matematicamente, para três segmentos formarem um triângulo, o comprimento de cada lado deve ser menor que a soma dos outros dois.
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <label for="lado1">Digite o valor do Lado 01:</label>
+    <input type="number" id="lado1"><br>
+    <label for="lado2">Digite o valor do Lado 02:</label>
+    <input type="number" id="lado2"><br>
+    <label for="lado3">Digite o valor do Lado 03:</label>
+    <input type="number" id="lado3"><br>
+    <button onclick="verificarTriangulo()">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificarTriangulo(){
+            let lado1 = Number(document.getElementById('lado1').value)
+            let lado2 = Number(document.getElementById('lado2').value)
+            let lado3 = Number(document.getElementById('lado3').value)
+
+            if (lado1 < lado2 + lado3 && lado2 < lado1 + lado3 && lado3 < lado1 + lado2) {
+                document.getElementById('resultado').textContent = `Um triângulo pode ser formado`
+            } else {
+                document.getElementById('resultado').textContent = `Não é possível desenhar um triângulo com essas medidas`
+            }
+        }
+    </script>
 </body>
 </html>

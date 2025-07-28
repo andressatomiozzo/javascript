@@ -9,9 +9,27 @@
     <h1>Exercício 017 - lógica de programação no JS</h1>
 
     <p>
+        Escreva um programa que pergunte a velocidade de um carro. Caso ultrapasse 80Km/h, exiba uma mensagem dizendo que o usuário foi multado. Nesse caso, exiba o valor da multa, cobrando R$5 por cada Km acima da velocidade permitida.
+
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <label for="velocidade">Qual a velocidade do carro (em km/h)?</label>
+    <input type="number" id="velocidade">
+    <button onclick="calcularMulta()">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularMulta(){
+            let velocidade = Number(document.getElementById('velocidade').value);
+            if (velocidade > 80){
+                let multa = (velocidade - 80) * 5;
+                document.getElementById('resultado').textContent = `Você ultrapassou o limite de velocidade e foi multado em R$${multa.toFixed(2)}`;
+            } else {
+                document.getElementById('resultado').textContent = `Você não ultrapassou o limite de velocidade, continue assim.`;
+            }
+        }
+    </script>
 </body>
 </html>

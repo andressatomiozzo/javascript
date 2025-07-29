@@ -9,10 +9,38 @@
     <h1>Exercício 031 - lógica de programação no JS</h1>
 
     <p>
-        
+       Crie um jogo de JoKenPo (Pedra-Papel-Tesoura) 
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <p>Escolha:</p>
+    <button onclick="jogar('pedra')">Pedra</button> <!-- chama a função com o valor que o jogador escolheu / a variável jogador recebe o valor pedra -->
+    <button onclick="jogar('papel')">Papel</button>
+    <button onclick="jogar('tesoura')">Tesoura</button>
+
+    <p id="resultado"></p>
+
+    <script>
+    function jogar(jogador) {
+      const opcoes = ['pedra', 'papel', 'tesoura'] // Define as opções do computador no jogo
+      const computador = opcoes[Math.floor(Math.random() * 3)] // Escolha aleatória do computador (Math.random() * 3 -> número entre 0 e 2.999...)
+
+      let resultado = " "
+
+      if (jogador === computador) {
+        resultado = `Empate! Ambos escolheram ${jogador}.`
+      } else if (
+        (jogador === 'pedra' && computador === 'tesoura') ||
+        (jogador === 'papel' && computador === 'pedra') ||
+        (jogador === 'tesoura' && computador === 'papel')
+      ) {
+        resultado = `Você venceu! ${jogador} ganha de ${computador}.`
+      } else {
+        resultado = `Você perdeu! ${computador} ganha de ${jogador}.`
+      }
+
+      document.getElementById('resultado').innerHTML = resultado
+    }
+  </script>
 </body>
 </html>

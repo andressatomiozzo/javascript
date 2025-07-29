@@ -9,10 +9,38 @@
     <h1>Exercício 032 - lógica de programação no JS</h1>
 
     <p>
-        
+        Crie um jogo onde o computador vai sortear um número entre 1 e 5 o jogador vai tentar descobrir qual foi o valor sorteado.
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <p>Escolha um número: </p>
+    <button onclick="escolher('1')">1</button>
+    <button onclick="escolher('2')">2</button>
+    <button onclick="escolher('3')">3</button>
+    <button onclick="escolher('4')">4</button>
+    <button onclick="escolher('5')">5</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function escolher(jogador){
+            const opcoes = ['1', '2', '3', '4', '5']
+            const computador = opcoes[Math.floor(Math.random() * 5)]
+
+            let mensagem = document.getElementById('resultado')
+
+            if (jogador === computador){
+                mensagem.innerHTML = `
+                    Parabéns, você acertou o número que o computador escolheu.<br>
+                    Você escolheu o ${jogador} e o computador escolheu o ${computador}
+                `
+            } else {
+                mensagem.innerHTML= `
+                    Infelizmente você não acertou o que o computador escolheu. <br>
+                    Você escolheu o ${jogador} e o computador escolheu o ${computador}
+                `
+            }
+        }
+    </script>
 </body>
 </html>

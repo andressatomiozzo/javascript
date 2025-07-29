@@ -9,10 +9,39 @@
     <h1>Exercício 036 - lógica de programação no JS</h1>
 
     <p>
-        
+        Um programa de vida saudável quer dar pontos atividades físicas que podem ser trocados por dinheiro. O sistema funciona assim: <br>
+        - Cada hora de atividade física no mês vale pontos <br>
+        - até 10h de atividade no mês: ganha 2 pontos por hora <br>
+        - de 10h até 20h de atividade no mês: ganha 5 pontos por hora <br>
+        - acima de 20h de atividade no mês: ganha 10 pontos por hora <br>
+        - A cada ponto ganho, o cliente fatura R$0,05 (5 centavos) <br>
+        Faça um programa que leia quantas horas de atividade uma pessoa teve por mês, calcule e mostre quantos pontos ela teve e quanto dinheiro ela conseguiu ganhar.
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <label for="horas">Quantas horas de atividade física você fes este mês?</label>
+    <input type="number" id="horas" min="0">
+    <button onclick="calcularDinheiro()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularDinheiro(){
+            const horas = Number(document.getElementById('horas').value)
+            let pontos
+            
+            if (horas <= 10){
+                pontos = horas * 2
+            } else if (horas > 10 && horas <= 20){
+                pontos = horas * 5
+            } else {
+                pontos = horas * 10
+            }
+
+            const dinheiro = pontos * 0.05
+
+            document.getElementById('resultado').textContent = `Você fez ${pontos} pontos neste mês, ganhou R$${dinheiro}`
+        }
+    </script>
 </body>
 </html>

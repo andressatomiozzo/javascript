@@ -9,10 +9,59 @@
     <h1>Exercício 037 - lógica de programação no JS</h1>
 
     <p>
-        
+       Uma empresa precisa reajustar o salário dos seus funcionários, dando um aumento de acordo com alguns fatores. Faça um programa que leia o salário atual, o gênero do funcionário e há quantos anos esse funcionário trabalha na empresa. No final, mostre o seu novo salário, baseado na tabela a seguir: <br>
+       - Mulheres <br>
+       - menos de 15 anos de empresa: +5% <br>
+       - de 15 até 20 anos de empresa: +12% <br>
+       - mais de 20 anos de empresa: +23% <br>
+       - Homens <br>
+       - menos de 20 anos de empresa: +3% <br>
+       - de 20 até 30 anos de empresa: +13% <br>
+       - mais de 30 anos de empresa: +25% 
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <label for="genero">Qual o seu gênero? </label>
+    <select id="genero">
+        <option value="feminino">Feminino</option>
+        <option value="masculino">Masculino</option>
+    </select><br>
+    <label for="salar">Digite o seu salário atual: R$</label>
+    <input type="number" id="salar"><br>
+    <label for="anos">Digite a quantidade de anos que está na empresa: </label>
+    <input type="number" id="anos"><br>
+    <button onclick="calcularSalarioNovo()">Enviar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularSalarioNovo(){
+            const genero = document.getElementById('genero').value 
+            const salar = Number(document.getElementById('salar').value)
+            const anos = Number(document.getElementById('anos').value)
+
+            let salarNovo
+
+            if (genero === 'feminino'){
+                if (anos <= 15){
+                    salarNovo = salar * 1.05
+                } else if (anos > 15 && anos <= 20){
+                    salarNovo = salar * 1.12
+                } else {
+                    salarNovo = salar * 1.23
+                }
+            } else {
+                if (anos <= 20){
+                    salarNovo = salar * 1.03
+                } else if (anos > 20 && anos <= 30){
+                    salarNovo = salar * 1.13
+                } else {
+                    salarNovo = salar * 1.25
+                }
+            }
+
+            document.getElementById('resultado').textContent = `O seu novo salário será de R$${salarNovo.toFixed(2)}`
+        }
+    </script>
 </body>
 </html>

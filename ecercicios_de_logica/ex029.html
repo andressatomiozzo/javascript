@@ -9,10 +9,41 @@
     <h1>Exercício 029 - lógica de programação no JS</h1>
 
     <p>
-        
+        Desenvolva um programa que leia o nome de um funcionário, seu salário, quantos anos ele trabalha na empresa e mostre seu novo salário, reajustado de acordo com a tabela a seguir: 
+        - Até 3 anos de empresa: aumento de 3% 
+        - entre 3 e 10 anos: aumento de 12.5% 
+        - 10 anos ou mais: aumento de 20%
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <label for="nome">Digite seu nome: </label>
+    <input type="text" id="nome"><br>
+    <label for="salar">Digite seu salário: </label>
+    <input type="number" id="salar"><br>
+    <label for="anos">Digite a quantidade de anos que você já trabalhou na empresa: </label>
+    <input type="number" id="anos"><br>
+    <button onclick="calcularNovoSalario()">Calcular novo salário</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularNovoSalario(){
+            let nome = document.getElementById('nome').value 
+            let salar = Number(document.getElementById('salar').value)
+            let anos = Number(document.getElementById('anos').value)
+            let mensagem = document.getElementById('resultado')
+
+            if (anos < 3){
+                let novoSalar = salar * 1.03
+                mensagem.textContent = `Olá ${nome}, o seu novo salário será de ${novoSalar}`
+            } else if (anos > 3 && anos < 10){
+                let novoSalar = salar * 1.125
+                mensagem.textContent = `Olá ${nome}, o seu novo salário será de ${novoSalar}`
+            } else {
+                let novoSalar = salar * 1.20
+                mensagem.textContent = `Olá ${nome}, o seu novo salário será de ${novoSalar}`
+            }
+        }
+    </script>
 </body>
 </html>

@@ -9,10 +9,58 @@
     <h1>Exercício 035 - lógica de programação no JS</h1>
 
     <p>
-        
+        Uma empresa de aluguel de carros precisa cobrar pelos seus serviços. O aluguel de um carro custa R$90 por dia para carro popular e R$150 por dia para carro de luxo. Além disso, o cliente paga por Km percorrido. Faça um programa que leia o tipo de carro alugado (popular ou luxo), quantos dias de aluguel e quantos Km foram percorridos. No final mostre o preço a ser pago de acordo com a tabela a seguir: <br>
+        - Carros populares (aluguel de R$90 por dia) <br>
+        - Até 100Km percorridos: R$0,20 por Km <br>
+        - Acima de 100Km percorridos: R$0,10 por Km <br>
+        - Carros de luxo (aluguel de R$150 por dia) <br>
+        - Até 200Km percorridos: R$0,30 por Km <br>
+        - Acima de 200Km percorridos: R$0,25 por Km
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <label for="carro">Qual o tipo de carro você alugou? </label>
+    <select id="tipo">
+        <option value="popular">Popular</option>
+        <option value="luxo">Luxo</option>
+    </select><br>
+    <label for="dias">Quantos dias? </label>
+    <input type="number" id="dias" min="1"><br>
+    <label for="km">Quantos km foram percorridos? </label>
+    <input type="number" id="km" min="0"><br>
+    <button onclick="calcularAluguel()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularAluguel(){
+            const tipo = document.getElementById('tipo').value 
+            const dias = Number(document.getElementById('dias').value)
+            const km = Number(document.getElementById('km').value)
+            let precoDia, precoKm
+
+            const mensagem = document.getElementById('resultado')
+
+            if (tipo === "popular"){
+                precoDia = dias * 90
+                if (km <= 100){
+                    precoKm = km * 0.2
+                } else {
+                    precoKm = km * 0.1
+                }
+            } else {
+                precoDia = dias * 150
+                if (km <= 200){
+                    precoKm = km * 0.3
+                } else {
+                    precoKm = km * 0.25
+                }
+            }
+
+            const precoTotal = precoKm + precoDia
+
+            mensagem.textContent = `O valor do aluguel será ${precoTotal}`
+        }
+    </script>
 </body>
 </html>

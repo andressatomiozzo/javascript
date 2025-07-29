@@ -9,10 +9,36 @@
     <h1>Exercício 026 - lógica de programação no JS</h1>
 
     <p>
-        
+        Escreva um algoritmo que leia dois números inteiros e compare-os, mostrando na tela uma das mensagens abaixo: <br>
+        - O primeiro valor é o maior <br>
+        - O segundo valor é o maior <br>
+        - Não existe valor maior, os dois são iguais
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <label for="num1">Digite um número: </label>
+    <input type="number" id="num1"><br>
+    <label for="num2">Digite outro número:</label>
+    <input type="number" id="num2"><br>
+    <button onclick="compararNumeros()">Comparar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function compararNumeros(){
+            let num1 = Number(document.getElementById('num1').value)
+            let num2 = Number(document.getElementById('num2').value)
+            let mensagem = document.getElementById('resultado')
+
+            if (num1 < num2) {
+                mensagem.textContent = `O número ${num1} é menor que o número ${num2}`
+            } else if (num1 > num2){
+                mensagem.textContent = `O número ${num1} é maior que o número ${num2}`
+            } else {
+                mensagem.textContent = `Os números são iguais`
+            }
+
+        }
+    </script>
 </body>
 </html>

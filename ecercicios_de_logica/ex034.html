@@ -9,10 +9,45 @@
     <h1>Exercício 034 - lógica de programação no JS</h1>
 
     <p>
-        
+        O Índice de Massa Corpórea (IMC) é um valor calculado baseado na altura e no peso de uma pessoa. De acordo com o valor do IMC, podemos classificar o indivíduo dentro de certas faixas. <br>
+        - abaixo de 18.5: Abaixo do peso <br>
+        - entre 18.5 e 25: Peso ideal <br>
+        - entre 25 e 30: Sobrepeso <br>
+        - entre 30 e 40: Obesidade <br>
+        - acima de 40: Obseidade mórbida <br>
+        Obs: O IMC é calculado pela expressão peso/altura² (peso dividido pelo quadrado da altura)
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <label for="altura">Digite a sua altura (metros): </label>
+    <input type="number" id="altura"><br>
+    <label for="peso">Digite o seu peso (kg): </label>
+    <input type="number" id="peso"><br>
+    <button onclick="calcularIMC()">Calcular IMC</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularIMC(){
+            const altura = Number(document.getElementById('altura').value)
+            const peso = Number(document.getElementById('peso').value)
+
+            const mensagem = document.getElementById('resultado')
+
+            const imc = peso/altura**2
+
+            if (imc <= 18.5) {
+                mensagem.textContent = `O seu IMC é de ${imc.toFixed(2)}, você está abaixo do peso`
+            } else if (imc > 18.5 && imc <= 25){
+                mensagem.textContent = `O seu IMC é de ${imc.toFixed(2)}, você está no peso ideal`
+            } else if (imc > 20 && imc <= 30){
+                mensagem.textContent = `O seu IMC é de ${imc.toFixed(2)}, você está em sobrepeso`
+            } else if (imc > 30 && imc <= 40){
+                mensagem.textContent = `O seu IMC é de ${imc.toFixed(2)}, você está em obesidade`
+            } else {
+                mensagem.textContent = `O seu IMC é de ${imc.toFixed(2)}, você está em obesidade mórbida`
+            }
+        }
+    </script>
 </body>
 </html>

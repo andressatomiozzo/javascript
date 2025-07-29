@@ -9,10 +9,37 @@
     <h1>Exercício 027 - lógica de programação no JS</h1>
 
     <p>
-        
+        Crie um programa que leia duas notas de um aluno e calcule a sua média, mostrando uma mensagem no final, de acordo com a média atingida: <br>
+        - Média até 4.9: REPROVADO <br>
+        - Média entre 5.0 e 6.9: RECUPERAÇÃO <br>
+        - Média 7.0 ou superior: APROVADO
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <label for="nota1">Digite a primeira nota: </label>
+    <input type="number" id="nota1"><br>
+    <label for="nota2">Digite a segunda nota: </label>
+    <input type="number" id="nota2"><br>
+    <button onclick="calcularMedia()">Calcular a média</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularMedia(){
+            let nota1 = Number(document.getElementById('nota1').value)
+            let nota2 = Number(document.getElementById('nota2').value)
+            let mensagem = document.getElementById('resultado')
+
+            let media = (nota1 + nota2)/2
+
+            if (media < 4.9){
+                mensagem.textContent = `A média do aluno foi de ${media.toFixed(2)}, o aluno foi REPROVADO`
+            } else if (media > 5 && media < 6.9){
+                mensagem.textContent = `A média do aluno foi de ${media.toFixed(2)}, o aluno está em RECUPERAÇÃO`
+            } else {
+                mensagem.textContent = `A média do aluno foi de ${media.toFixed(2)}, o aluno foi APROVADO`
+            }
+        }
+    </script>
 </body>
 </html>

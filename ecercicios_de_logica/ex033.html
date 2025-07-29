@@ -9,10 +9,36 @@
     <h1>Exercício 033 - lógica de programação no JS</h1>
 
     <p>
-        
+        Escreva um programa para aprovar ou não o empréstimo bancário para a compra de uma casa. O programa vai perguntar o valor da casa, o salário do comprador e em quantos anos ele vai pagar. Calcule o valor da prestação mensal, sabendo que ela não pode exceder 30% do salário ou então o empréstimo será negado.
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <label for="casa">Digite o valor da casa: </label>
+    <input type="number" id="casa"><br>
+    <label for="salar">Digite o valor do seu salário: </label>
+    <input type="number" id="salar"><br>
+    <label for="anos">Digite em quantos anos você irá pagar a casa: </label>
+    <input type="number" id="anos"><br>
+    <button onclick="calcularEmprestimo()">Enviar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularEmprestimo(){
+            const casa = Number(document.getElementById('casa').value)
+            const salar = Number(document.getElementById('salar').value)
+            const anos = Number(document.getElementById('anos').value)
+
+            const mensagem = document.getElementById('resultado')
+
+            const empMensal = casa/(anos*12)
+
+            if (empMensal >= salar*0.3){
+                mensagem.textContent = `O seu empréstimo foi aprovado`
+            } else {
+                mensagem.textContent= `O seu empréstimo foi negado`
+            }
+        }
+    </script>
 </body>
 </html>

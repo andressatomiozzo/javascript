@@ -9,10 +9,42 @@
     <h1>Exercício 030 - lógica de programação no JS</h1>
 
     <p>
-        
+        Refaça o algoritmo 25, acrescentando o recurso de mostrar que tipo de triângulo será formado: <br>
+        - EQUILÁTERO: todos os lados iguais <br>
+        - ISÓSCELES: dois lados iguais <br>
+        - ESCALENO: todos os lados diferentes
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <label for="lado1">Digite o valor do Lado 01:</label>
+    <input type="number" id="lado1"><br>
+    <label for="lado2">Digite o valor do Lado 02:</label>
+    <input type="number" id="lado2"><br>
+    <label for="lado3">Digite o valor do Lado 03:</label>
+    <input type="number" id="lado3"><br>
+    <button onclick="verificarTriangulo()">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificarTriangulo(){
+            let lado1 = Number(document.getElementById('lado1').value)
+            let lado2 = Number(document.getElementById('lado2').value)
+            let lado3 = Number(document.getElementById('lado3').value)
+            let mensagem = document.getElementById('resultado')
+
+            if (lado1 < lado2 + lado3 && lado2 < lado1 + lado3 && lado3 < lado1 + lado2){
+                if (lado1 == lado2 && lado2 == lado1) {
+                    mensagem.textContent = `Um triângulo pode ser formado e ele é EQUILÁTERO`
+                } else if (lado1 == lado2 || lado2 == lado3 || lado3 == lado1){
+                    mensagem.textContent = `Um triângulo pode ser formado e ele é ISÓSCELES`
+                } else {
+                    mensagem.textContent = `Um triângulo pode ser formado e ele é ESCALENO`
+                }
+            } else {
+                mensagem.textContent = `Não é possível desenhar um triângulo com essas medidas`
+            }
+        }
+    </script>
 </body>
 </html>

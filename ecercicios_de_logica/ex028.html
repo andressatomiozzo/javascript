@@ -9,10 +9,37 @@
     <h1>Exercício 028 - lógica de programação no JS</h1>
 
     <p>
-        
+        Faça um programa que leia a largura e o comprimento de um terreno retangular, calculando e mostrando a sua área em m². O programa também devemostrar a classificação desse terreno, de acordo com a lista abaixo: 
+        - Abaixo de 100m² = TERRENO POPULAR 
+        - Entre 100m² e 500m² = TERRENO MASTER 
+        - Acima de 500m² = TERRENO VIP
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <label for="larg">Digite a largura do terreno: </label>
+    <input type="number" id="larg"><br>
+    <label for="comp">Digite o comprimento do terreno: </label>
+    <input type="number" id="comp"><br>
+    <button onclick="calcularArea()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularArea(){
+            let larg = Number(document.getElementById('larg').value)
+            let comp = Number(document.getElementById('comp').value)
+            let mensagem = document.getElementById('resultado')
+
+            let area = larg * comp
+
+            if (area < 100){
+                mensagem.textContent = `A área do terreno é de ${area} m², esse é um TERRENO POPULAR`
+            } else if (area > 100 && area < 500){
+                mensagem.textContent = `A área do terreno é de ${area} m², esse é um TERRENO MASTER`
+            } else {
+                mensagem.textContent = `A área do terreno é de ${area} m², esse é um TERRENO VIP`
+            }
+        }
+    </script>
 </body>
 </html>

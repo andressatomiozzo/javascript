@@ -9,10 +9,39 @@
     <h1>Exercício 044 - lógica de programação no JS</h1>
 
     <p>
-        
+        Crie um algoritmo que leia o valor inicial da contagem, o valor final e o incremento, mostrando em seguida todos os valores no intervalo: <br>
+        Ex: Digite o primeiro Valor: 3<br>
+        Digite o último Valor: 10<br>
+        Digite o incremento: 2<br>
+        Contagem: 3 5 7 9 Acabou!
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <label for="primeiro">Digite o primeiro valor: </label>
+    <input type="number" id="primeiro"> <br>
+    <label for="ultimo">Digite o último valor: </label>
+    <input type="number" id="ultimo"> <br>
+    <label for="incremento">Digite o incremento: </label>
+    <input type="number" id="incremento"> <br>
+    <button onclick="contar()">Contar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function contar(){
+            const primeiro = Number(document.getElementById('primeiro').value)
+            const ultimo = Number(document.getElementById('ultimo').value)
+            const incremento = Number(document.getElementById('incremento').value)
+            let contador = primeiro
+            let mensagem = ``
+
+            while(contador <= ultimo){
+                mensagem += contador + ` `
+                contador += incremento
+            }
+
+            document.getElementById('resultado').textContent = mensagem
+        }
+    </script>
 </body>
 </html>

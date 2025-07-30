@@ -9,10 +9,27 @@
     <h1>Exercício 047 - lógica de programação no JS</h1>
 
     <p>
-        
+        Desenvolva um aplicativo que mostre na tela o resultado da expressão 500 + 450 + 400 + 350 + 300 + ... + 50 + 0
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <p id="resultado"></p>
+
+    <script>
+        let contador = 500
+        let text = ``
+        let sub = 0
+
+        while(contador > 0){
+            text += contador + ` - `
+            sub -= contador
+            contador -= 50
+        }
+        
+        text += contador 
+        sub -= contador
+        
+        document.getElementById('resultado').textContent = `O resultado da expressão ${text} é igual a ${sub}`
+    </script>
 </body>
 </html>

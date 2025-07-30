@@ -9,10 +9,24 @@
     <h1>Exercício 041 - lógica de programação no JS</h1>
 
     <p>
-        
+        Desenvolva um programa que mostre na tela a seguinte contagem:<br>
+        100 95 90 85 80 ... 0 Acabou!
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <p id="resultado"></p>
+
+    <script>
+        let contador = 100
+        let texto = ``
+
+        while (contador >= 0){
+            texto += contador + ` `
+            contador --
+        }
+
+        texto += `Acabou!`
+        document.getElementById('resultado').textContent = texto
+    </script>
 </body>
 </html>

@@ -9,10 +9,24 @@
     <h1>Exercício 040 - lógica de programação no JS</h1>
 
     <p>
-        
+        Crie um aplicativo que mostre na tela a seguinte contagem:<br>
+        0 3 6 9 12 15 18 Acabou!
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <p id="resultado"></p>
+
+    <script>
+        let contador = 0
+        let texto = ``
+
+        while (contador <= 18){
+            texto += contador + ` `
+            contador += 3
+        }
+
+        texto += `Acabou!`
+        document.getElementById('resultado').textContent = texto
+    </script>
 </body>
 </html>

@@ -9,10 +9,27 @@
     <h1>Exercício 046 - lógica de programação no JS</h1>
 
     <p>
-        
+        Crie um programa que calcule e mostre na tela o resultado da soma entre 6 + 8 + 10 + 12 + 14 + ... + 98 + 100.
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <p id="resultado"></p>
+
+    <script>
+        let contador = 6
+        let text = ``
+        let soma = 0
+
+        while(contador <= 99){
+            text += contador + ` + `
+            soma += contador
+            contador += 2
+        }
+        
+        text += contador 
+        soma += contador
+        
+        document.getElementById('resultado').textContent = `A soma entre ${text} é igual a ${soma}`
+    </script>
 </body>
 </html>

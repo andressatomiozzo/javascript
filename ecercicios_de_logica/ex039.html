@@ -9,10 +9,25 @@
     <h1>Exercício 039 - lógica de programação no JS</h1>
 
     <p>
-        
+       Faça um algoritmo que mostre na tela a seguinte contagem:<br>
+       10 9 8 7 6 5 4 3 Acabou!
+ 
     </p>
 
     <h2>Exercício resolvido</h2>
+    <p id="resultado"></p>
     
+    <script>
+        let contador = 10
+        let texto = ``
+
+        while (contador >= 3){
+            texto += contador + ` `
+            contador --
+        }
+
+        texto += `Acabou!`
+        document.getElementById('resultado').textContent = texto
+    </script>
 </body>
 </html>

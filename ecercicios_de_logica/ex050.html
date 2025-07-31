@@ -18,17 +18,35 @@
 
     <h2>Exercício resolvido</h2>
     <button onclick="jogar()">Jogar</button>
+    <p id="resultado"></p>
 
     <script>
         function jogar() {
-        const opcoes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] // Define as opções do computador no jogo
-        const computador = opcoes[Math.floor(Math.random() * 10)] // Escolha aleatória do computador (Math.random() * 10 -> número entre 0 e 9.999...)
+            let acima5 = 0
+            let div3 = 0
+            let mensagem = ``
 
-        let resultado = " "
+            for (let i = 1; i <= 20; i ++){
+                const opcoes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] // Define as opções do computador no jogo
+                let computador = opcoes[Math.floor(Math.random() * 10)] // Escolha aleatória do computador (Math.random() * 10 -> número entre 0 e 9.999...)
 
-        
-        
-        document.getElementById('resultado').innerHTML = resultado
+                mensagem = mensagem + computador + `  `
+
+                if (computador > 5){
+                    acima5 ++
+                }
+
+                if (computador%3 === 0){
+                    div3 ++
+                }
+            }
+
+
+
+            document.getElementById('resultado').innerHTML = `
+                Os números que o computador sorteou foram os ${mensagem} 
+                <br>${acima5} números estão acima de 5 e ${div3} números são divisíveis por 3.
+            `
         }
   </script>
 </body>

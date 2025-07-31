@@ -10,10 +10,45 @@
     <h1>Exercício 051 - lógica de programação no JS</h1>
 
     <p>
-        
+        Faça um aplicativo que leia o preço de 8 produtos. No final, mostre na tela qual foi o maior e qual foi o menor preço digitados.
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <p>Digite o preço dos produtos: </p>
+    <input type="number" id="preco1"><br>
+    <input type="number" id="preco2"><br>
+    <input type="number" id="preco3"><br>
+    <input type="number" id="preco4"><br>
+    <input type="number" id="preco5"><br>
+    <input type="number" id="preco6"><br>
+    <input type="number" id="preco7"><br>
+    <input type="number" id="preco8"><br>
+    <button onclick="calcular()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcular(){
+            let maior 
+            let menor
+
+            for (let i=1; i<=8; i++){
+                let preco = Number(document.getElementById(`preco${i}`).value)
+                if (i === 1){
+                    maior = preco
+                    menor = preco
+                } else {
+                    if (preco > maior){
+                        maior = preco
+                    } else if (preco < menor){
+                        menor = preco
+                    }
+                }
+                
+            }
+
+            document.getElementById('resultado').textContent = `O maior número digitado foi ${maior}, o menor número digitado foi o ${menor}`
+        }
+    </script>
 </body>
 </html>

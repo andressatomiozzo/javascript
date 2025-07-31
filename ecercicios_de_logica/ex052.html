@@ -10,10 +10,65 @@
     <h1>Exercício 052 - lógica de programação no JS</h1>
 
     <p>
-        
+        Crie um algoritmo que leia a idade de 10 pessoas, mostrando no final: <br>
+        a - Qual é a média de idade do grupo <br>
+        b - Quantas pessoas tem mais de 18 anos <br>
+        c - Quantas pessoas tem menos de 5 anos <br>
+        d - Qual foi a maior idade lida
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <p>Digite a idade de 10 pessoas: </p>
+    <input type="number" id="idade1" placeholder="Pessoa 1">
+    <input type="number" id="idade2" placeholder="Pessoa 2"><br>
+    <input type="number" id="idade3" placeholder="Pessoa 3">
+    <input type="number" id="idade4" placeholder="Pessoa 4"><br>
+    <input type="number" id="idade5" placeholder="Pessoa 5">
+    <input type="number" id="idade6" placeholder="Pessoa 6"><br>
+    <input type="number" id="idade7" placeholder="Pessoa 7">
+    <input type="number" id="idade8" placeholder="Pessoa 8"><br>
+    <input type="number" id="idade9" placeholder="Pessoa 9">
+    <input type="number" id="idade10" placeholder="Pessoa 10"><br>
+    <button onclick="verificar()">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificar(){
+            let soma = 0
+            let maior
+            let idade18 = 0
+            let idade5 = 0
+
+            for (let i=1; i <= 10; i++){
+                let idade = Number(document.getElementById(`idade${i}`).value)
+
+                soma += idade
+
+                if (idade > 18){
+                    idade18 ++
+                }
+                if (idade < 5){
+                    idade5 ++
+                }
+                if (i === 1){
+                    maior = idade
+                } else {
+                    if (idade > maior){
+                        maior = idade
+                    }
+                }
+            }
+
+            let media = soma / 10
+
+            document.getElementById("resultado").innerHTML = `
+                A media das idades foi de ${media} <br>
+                ${idade18} pessoas tem mais de 18 anos <br>
+                ${idade5} pessoas tem menos de 5 anos <br>
+                A maior idade digitada por de ${maior}
+            `
+        }
+    </script>
 </body>
 </html>

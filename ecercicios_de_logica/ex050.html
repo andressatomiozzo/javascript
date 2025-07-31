@@ -10,10 +10,26 @@
     <h1>Exercício 050 - lógica de programação no JS</h1>
 
     <p>
-        
+        Desenvolva um programa que faça o sorteio de 20 números entre 0 e 10 e mostre na tela: <br>
+        a - Quais foram os números sorteados <br>
+        b - Quantos números estão acima de 5 <br>
+        c - Quantos números são divisíveis por 3
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <button onclick="jogar()">Jogar</button>
+
+    <script>
+        function jogar() {
+        const opcoes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] // Define as opções do computador no jogo
+        const computador = opcoes[Math.floor(Math.random() * 10)] // Escolha aleatória do computador (Math.random() * 10 -> número entre 0 e 9.999...)
+
+        let resultado = " "
+
+        
+        
+        document.getElementById('resultado').innerHTML = resultado
+        }
+  </script>
 </body>
 </html>

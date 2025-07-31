@@ -10,10 +10,42 @@
     <h1>Exercício 048 - lógica de programação no JS</h1>
 
     <p>
-        
+        Faça um programa que leia 7 números inteiros e no final mostre o somatório entre eles. 
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <label for="num1">Digite um número: </label>
+    <input type="number" id="num1"><br>
+    <label for="num2">Digite um número: </label>
+    <input type="number" id="num2"><br>
+    <label for="num3">Digite um número: </label>
+    <input type="number" id="num3"><br>
+    <label for="num4">Digite um número: </label>
+    <input type="number" id="num4"><br>
+    <label for="num5">Digite um número: </label>
+    <input type="number" id="num5"><br>
+    <label for="num6">Digite um número: </label>
+    <input type="number" id="num6"><br>
+    <label for="num7">Digite um número: </label>
+    <input type="number" id="num7"><br>
+    <button onclick="calcularSoma()">Calcular a soma entre os números</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularSoma(){
+            const num1 = Number(document.getElementById('num1').value)
+            const num2 = Number(document.getElementById('num2').value)
+            const num3 = Number(document.getElementById('num3').value)
+            const num4 = Number(document.getElementById('num4').value)
+            const num5 = Number(document.getElementById('num5').value)
+            const num6 = Number(document.getElementById('num6').value)
+            const num7 = Number(document.getElementById('num7').value)
+
+            const soma = num1 + num2 + num3 + num4 + num5 + num6 + num7
+
+            document.getElementById('resultado').textContent = `A soma dos números é ${soma}`
+        }
+    </script>
 </body>
 </html>

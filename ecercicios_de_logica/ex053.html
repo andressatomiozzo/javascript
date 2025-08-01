@@ -10,10 +10,95 @@
     <h1>Exercício 053 - lógica de programação no JS</h1>
 
     <p>
-        
+        Faça um programa que leia a idade e o sexo de 5 pessoas, mostrando no final: <br>
+        a - Quantos homens foram cadastrados <br>
+        b - Quantas mulheres foram cadastradas <br>
+        c - A média de idade do grupo <br>
+        d - A média de idade dos homens <br>
+        e - Quantas mulheres tem mais de 20 anos
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <label for="sexo1">Selecione o seu sexo: </label>
+    <select id="sexo1">
+        <option value="masc">Masculino</option>
+        <option value="fem">Feminino</option>
+    </select>
+    <label for="idade1">Digite a sua idade: </label>
+    <input type="number" id="idade1"><br>
+
+        <label for="sexo2">Selecione o seu sexo: </label>
+    <select id="sexo2">
+        <option value="masc">Masculino</option>
+        <option value="fem">Feminino</option>
+    </select>
+    <label for="idade2">Digite a sua idade: </label>
+    <input type="number" id="idade2"><br>
+
+        <label for="sexo3">Selecione o seu sexo: </label>
+    <select id="sexo3">
+        <option value="masc">Masculino</option>
+        <option value="fem">Feminino</option>
+    </select>
+    <label for="idade3">Digite a sua idade: </label>
+    <input type="number" id="idade3"><br>
+
+        <label for="sexo4">Selecione o seu sexo: </label>
+    <select id="sexo4">
+        <option value="masc">Masculino</option>
+        <option value="fem">Feminino</option>
+    </select>
+    <label for="idade4">Digite a sua idade: </label>
+    <input type="number" id="idade4"><br>
+
+        <label for="sexo5">Selecione o seu sexo: </label>
+    <select id="sexo5">
+        <option value="masc">Masculino</option>
+        <option value="fem">Feminino</option>
+    </select>
+    <label for="idade5">Digite a sua idade: </label>
+    <input type="number" id="idade5"><br>
+
+    <button onclick="calcular()">Enviar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcular (){
+            let homens = 0
+            let mulheres = 0
+            let soma = 0
+            let somaHom = 0
+            let mulhe20 = 0
+
+            for (let i = 1; i <= 5; i++){
+                let idade = Number(document.getElementById(`idade${i}`).value)
+                let sexo = document.getElementById(`sexo${i}`).value 
+                
+                if (sexo === "masc"){
+                    homens ++
+                    somaHom += idade
+                } else {
+                    mulheres ++
+                    if (idade > 20){
+                        mulhe20 ++
+                    }
+                }
+
+                soma += idade
+            }
+
+            media = soma / 5
+            mediaHom = somaHom/homens
+
+            document.getElementById('resultado').innerHTML = `
+                ${homens} homens foram cadastrados <br>
+                ${mulheres} Quantas mulheres foram cadastradas <br>
+                ${media.toFixed(2)} é a média de idade do grupo <br>
+                ${mediaHom.toFixed(2)} é a média de idade dos homens <br>
+                ${mulhe20} mulheres tem mais de 20 anos
+            `
+        }
+    </script>
 </body>
 </html>

@@ -10,10 +10,41 @@
     <h1>Exercício 055 - lógica de programação no JS</h1>
 
     <p>
-        
+        Vamos melhorar o jogo que fizemos no exercício 32. A partir de agora, o computador vai sortear um número entre 1 e 10 e o jogador vai ter 4 tentativas para tentar acertar
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <p>Escolha um número de 1 a 10: </p>
+    <input type="number" id="inum1">
+    <input type="number" id="inum2">
+    <input type="number" id="inum3">
+    <input type="number" id="inum4">
+    <button onclick="verificar()">Verificar</button>
+
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificar(){
+            let mensagem = document.getElementById('resultado')
+            for (let i = 1; i <= 4; i ++){
+                let jogador = Number(document.getElementById(`inum${i}`).value)
+                const opcoes = ['1', '2', '3', '4', '5']
+                let computador = opcoes[Math.floor(Math.random() * 10)]
+
+                if (jogador === computador){
+                    mensagem.innerHTML = `
+                        Parabéns, você acertou o número que o computador escolheu na jogada ${i}.<br>
+                        Você escolheu o ${jogador} e o computador escolheu o ${computador}
+                    `
+                } else {
+                    mensagem.innerHTML= `
+                        Infelizmente você não acertou o que o computador escolheu na jogada ${i}. <br>
+                        Você escolheu o ${jogador} e o computador escolheu o ${computador}
+                    `
+                }
+            }            
+        }
+    </script>
 </body>
 </html>

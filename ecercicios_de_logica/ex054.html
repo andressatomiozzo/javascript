@@ -10,10 +10,72 @@
     <h1>Exercício 054 - lógica de programação no JS</h1>
 
     <p>
-        
+        Desenvolva um aplicativo que leia o peso e a altura de 7 pessoas, mostrando no final: <br>
+        a - Qual foi a média de altura do grupo <br>
+        b - Quantas pessoas pesam mais de 90Kg <br>
+        c - Quantas pessoas que pesam menos de 50Kg tem menos de 1.60m <br>
+        d - Quantas pessoas que medem mais de 1.90m pesam mais de 100Kg.
     </p>
 
     <h2>Exercício resolvido</h2>
-    
+    <form id="formulario">
+        <div id="inputs"></div>
+        <button type="submit">Calcular</button>
+    </form>
+
+
+
+    <div id="resultado"></div>
+
+    <script>
+        const totalPessoas = 2;
+        const inputsDiv = document.getElementById("inputs");
+
+        // Gera os campos de entrada
+        for (let i = 1; i <= totalPessoas; i++) {
+        inputsDiv.innerHTML += `
+            <h4>Pessoa ${i}</h4>
+            Peso (kg): <input type="number" name="peso${i}" step="0.1" required><br>
+            Altura (m): <input type="number" name="altura${i}" step="0.01" required><br><br>
+        `;
+        }
+
+        document.getElementById("formulario").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        let somaAltura = 0;
+        let mais90kg = 0;
+        let menos50kgEMenos160 = 0;
+        let mais190cmEMais100kg = 0;
+
+        for (let i = 1; i <= totalPessoas; i++) {
+            const peso = parseFloat(document.querySelector(`[name=peso${i}]`).value);
+            const altura = parseFloat(document.querySelector(`[name=altura${i}]`).value);
+
+            somaAltura += altura;
+
+            if (peso > 90) {
+            mais90kg++;
+            }
+
+            if (peso < 50 && altura < 1.60) {
+            menos50kgEMenos160++;
+            }
+
+            if (altura > 1.90 && peso > 100) {
+            mais190cmEMais100kg++;
+            }
+        }
+
+        const mediaAltura = somaAltura / totalPessoas;
+
+        document.getElementById("resultado").innerHTML = `
+            a) Média de altura do grupo: ${mediaAltura.toFixed(2)} m <br>
+            b) Pessoas com mais de 90Kg: ${mais90kg} <br>
+            c) Pessoas com menos de 50Kg e menos de 1.60m: ${menos50kgEMenos160} <br>
+            d) Pessoas com mais de 1.90m e mais de 100Kg: ${mais190cmEMais100kg}
+        `;
+        });
+    </script>
 </body>
 </html>

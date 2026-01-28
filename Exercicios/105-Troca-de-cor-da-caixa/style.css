@@ -1,0 +1,21 @@
+#quadrado {
+  width: 400px;
+  height: 400px;
+  margin-bottom: 10px;
+}
+
+.preto {
+  border: 5px solid black;
+}
+
+.vermelho {
+  border: 5px solid red;
+}
+
+.rosa {
+  border: 5px solid purple;
+}
+
+.azul {
+  border: 5px solid blue;
+}

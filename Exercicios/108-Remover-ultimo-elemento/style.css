@@ -1,0 +1,36 @@
+.box {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  margin: 5px;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.preto {
+  border: 2px solid black;
+}
+
+.vermelho {
+  border: 2px solid red;
+}
+
+.amarelo {
+  border: 2px solid yellow;
+}
+
+.azul {
+  border: 2px solid blue;
+}
+
+.parag{
+    margin: 0;
+}
+
+
+#containerCaixas {
+  min-height: 38px;
+  display: flex;
+  flex-wrap: wrap;
+}

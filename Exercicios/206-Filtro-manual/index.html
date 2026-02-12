@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filtro manual</title>
+  </head>
+  <body>
+    <h1>Filtro manual</h1>
+    <h2>Objetivo: lógica de filter (sem usar .filter)</h2>
+    <p>Array de idades</p>
+    <p>Crie um novo array só com idades ≥ 18</p>
+    <p>Use for + if</p>
+    <p>Depois, refaça usando .filter() e compare.</p>
+
+    <h2>Resolução:</h2>
+    
+    <label for="name">Nome: </label>
+    <input type="text" name="name" id="name" />
+    <label for="age">Idade:</label>
+    <input type="number" name="age" id="age" />
+    <button id="adicBtn">Adicionar</button>
+    <button id="resetBtn">Resetar</button>
+    <div id="dadosContainer"></div>
+    
+    <h3>Sem o .filter:</h3>
+    <button id="avalBtn">Avaliar</button>
+    <div id="respostasContainer"></div>
+    
+    <h3>Com o .filter:</h3>
+    <button id="avalBtnFilter">Avaliar</button>
+    <div id="respostasContainerFilter"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

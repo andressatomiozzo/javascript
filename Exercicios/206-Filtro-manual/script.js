@@ -107,7 +107,7 @@ avalBtnFilter.addEventListener("click", () => {
   let maiorIdadeDados = idadeDados.filter(myFunction);
 
   function myFunction(value) {
-    return value > 18;
+    return value >= 18;
   }
 
   let soma = maiorIdadeDados.length;

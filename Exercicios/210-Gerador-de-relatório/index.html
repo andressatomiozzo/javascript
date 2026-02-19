@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerador de relatório</title>
+  </head>
+  <body>
+    <h1>Gerador de relatório</h1>
+    <h2>Objetivo:</h2>
+    <p>Array de objetos</p>
+    <p>Gerar um relatório dizendo:</p>
+    <ul>
+      <li>quantas pessoas existem</li>
+      <li>quantas são maiores de idade</li>
+      <li>média de idade</li>
+    </ul>
+
+    <h2>Resolução:</h2>
+    <label for="nome">Nome: </label>
+    <input type="text" name="nome" id="nome" />
+    <label for="idade">Idade: </label>
+    <input type="number" name="idade" id="idade" />
+    <button id="add-btn">Adicionar pessoa</button>
+
+    <div id="resposta-array-container"></div>
+
+    <button id="pessoas-existentes-btn">Quantas pessoas existem?</button>
+    <p id="resposta-pessoas-existentes"></p>
+    <button id="maiores-de-idade-btn">Quantas são maiores de idade?</button>
+    <p id="resposta-maiores-de-idade"></p>
+    <button id="media-de-idade-btn">Média de idade:</button>
+    <p id="resposta-media-de-idade"></p>
+
+    <script src="script.js"></script>
+  </body>
+</html>

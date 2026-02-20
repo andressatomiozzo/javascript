@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analisador de notas</title>
+  </head>
+  <body>
+    <h1>Analisador de notas</h1>
+    <h2>Objetivo: forEach + condicionais + acumuladores</h2>
+    <h3>Tarefas:</h3>
+    <p>Percorra o array com forEach</p>
+    <p>Calcule:</p>
+    <ul>
+      <li>média das notas</li>
+      <li>quantidade de notas ≥ 7</li>
+      <li>maior nota</li>
+      <li>menor nota</li>
+    </ul>
+    <h3>Regras: </h3>
+    <ul>
+      <li>Não use reduce</li>
+      <li>Não use Math.max / Math.min</li>
+    </ul>
+
+    <h2>Resolução:</h2>
+    <label for="numero">Insira um número: </label>
+    <input type="number" name="numero" id="numero" min="0" max="10" placeholder="0 a 10">
+    <button id="add-btn">Adicionar no Array</button>
+
+    <p id="array-content"></p>
+    <p id="alerta"></p>
+
+    <button id="calcular-btn">Calcular</button>
+
+    <div id="respostas-container"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

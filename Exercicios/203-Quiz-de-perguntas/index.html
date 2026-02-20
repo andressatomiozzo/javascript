@@ -8,10 +8,30 @@
   <body>
     <h1>Quiz de perguntas</h1>
     <h2>Objetivo:</h2>
-    <p>Array de objetos [ {pergunta, respostas, correta} ].</p>
+    <p>Array de objetos [ {pergunta, respostas, pontos} ].</p>
     <p>Mostra pergunta por vez, captura resposta.</p>
     <p>Ao final, calcula pontuação com forEach ou reduce.</p>
 
     <h2>Resolução:</h2>
+    <div>
+      <label for="pergunta">Escreva a pergunta:</label>
+      <input type="text" name="pergunta" id="pergunta">
+    </div>
+    <div>
+      <label for="resposta">Insira a sua resposta:</label>
+      <input type="text" name="resposta" id="resposta">
+    </div>
+    <div>
+      <label for="pontos">Quantos pontos você conseguiu?</label>
+      <input type="number" name="pontos" id="pontos">
+    </div>
+    <button id="add-btn">Adicionar</button>
+    
+    <div id="respostas-container"></div>
+
+    <button id="pontuacao-btn">Calcular pontuação</button>
+    <p id="pontuacao-content"></p>
+
+    <script src="script.js"></script>
   </body>
 </html>

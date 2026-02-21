@@ -1,0 +1,24 @@
+.carrossel {
+  width: 500px; /*delimitar o espaço com os botões*/
+  display: flex; /*deixar os botões ao lado do carrossel*/
+  overflow: hidden; /*  Esconder as outras imagens */
+}
+
+.carrossel > div {
+  overflow: hidden; /*  Esconder as outras imagens */
+  width: 400px; /*delimitar o espaço apenas dos slides*/
+}
+
+.slides {
+  display: flex; /*Colocar as imagens lado a lado*/
+  transition: transform 0.5s; /*Preparar o terreno para a animação: quando ocorrer a transition vai ser em 0.5 segundos*/
+}
+
+.slides img {
+  width: 100%; /*Ocupar 100% do tamanho do seu container*/
+  flex-shrink: 0; /* Não deixar que as imagens encolham para que todas apareçam */
+}
+
+.btn {
+  z-index: 3;
+}

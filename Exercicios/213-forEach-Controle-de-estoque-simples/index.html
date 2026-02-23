@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controle de estoque simples</title>
+  </head>
+  <body>
+    <h1>Controle de estoque simples</h1>
+    <h2>Objetivo: lógica real + forEach</h2>
+    <p>Percorra com forEach</p>
+    <p>Descubra:</p>
+    <ul>
+      <li>quantos produtos existem no total</li>
+      <li>quantos estão fora de estoque</li>
+      <li>crie um array só com os produtos que precisam de reposição (quantidade ≤ 1)</li>
+    </ul>
+
+    <h2>Resolução:</h2>
+    <label for="nome">Nome do produto:</label>
+    <input type="text" name="nome" id="nome">
+    <label for="quantidade">Quantidade:</label>
+    <input type="number" name="quantidade" id="quantidade" min="0">
+    <button class="add btn">Adicionar</button>
+
+    <div id="produtos-container"><p>Produtos:</p></div>
+
+    <button class="calc btn">Calcular</button>
+    <p id="resposta"></p>
+
+    <script src="script.js"></script>
+  </body>
+</html>

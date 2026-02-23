@@ -1,9 +1,6 @@
-const carrossel = document.getElementById("carrossel");
-const viewport = document.getElementById("viewport");
-const track = document.getElementById("track");
-
 const prevBtn = document.querySelector(".prev");
 const nextBtn = document.querySelector(".next");
+const track = document.getElementById("track");
 
 let slideAtual = 0;
 const numeroDeSlides = 4;

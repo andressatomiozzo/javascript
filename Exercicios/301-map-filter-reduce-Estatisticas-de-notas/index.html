@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estatísticas de notas</title>
+  </head>
+  <body>
+    <h1>Estatísticas de notas</h1>
+    <h2>objetivo:</h2>
+    <p>Input: lista de notas.</p>
+    <p>Mostra:</p>
+    <ul>
+      <li>notas maiores que 7 (filter)</li>
+      <li>média (reduce)</li>
+      <li>notas transformadas em conceito (map)</li>
+    </ul>
+
+    <h2>Resolução:</h2>
+    <label for="nota">Nota:</label>
+    <input type="number" name="nota" id="nota" min="0" max="10">
+    <button class="btn add">Adicionar</button>
+    <p id="resposta-array">Array:</p>
+
+    <button class="calc btn">Calcular</button>
+
+    <p id="resposta"></p>
+
+    <script src="script.js"></script>
+  </body>
+</html>

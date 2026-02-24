@@ -1,0 +1,19 @@
+.carrossel {
+  display: flex;
+  width: 500px;
+}
+
+.viewport {
+  overflow: hidden;
+}
+
+.slides {
+  width: 400px;
+  display: flex;
+  transition: 0.5s;
+}
+
+.slides img {
+  width: 100%;
+  flex-shrink: 0;
+}

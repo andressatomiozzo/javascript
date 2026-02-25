@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "Curso de JavaScript do Curso em Video (Pode ser qualquer coisa)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

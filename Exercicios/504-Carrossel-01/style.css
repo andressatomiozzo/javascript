@@ -1,0 +1,21 @@
+#carrossel {
+  display: flex;
+  /* justify-content: space-around; */
+  width: 550px;
+}
+
+#viewport {
+  display: flex;
+  overflow: hidden;
+}
+
+#track {
+  display: flex;
+  width: 500px;
+  transition: transform 0.5s;
+}
+
+#track img {
+  width: 100%;
+  flex-shrink: 0;
+}

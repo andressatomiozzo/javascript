@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de usuários</title>
+  </head>
+  <body>
+    <h1>Lista de usuários</h1>
+    <h2>Objetivo:</h2>
+    <p>Array de objetos {nome, idade}.</p>
+    <ul>
+      <li>Filtrar maiores de idade.</li>
+      <li>Mostrar média de idade.</li>
+      <li>Ordenar por nome.</li>
+    </ul>
+
+    <h3>Resolução:</h3>
+    <label for="nome">Nome: </label>
+    <input type="text" name="nome" id="nome">
+    <label for="idade">Idade</label>
+    <input type="number" name="idade" id="idade" min="0" max="150">
+    <button class="add btn">Adicionar</button>
+    <div id="array-container"></div>
+
+    <button class="calc btn">Calcular</button>
+    
+    <div id="resposta-container"></div>
+
+    <script src="script-ts.js"></script>
+  </body>
+</html>

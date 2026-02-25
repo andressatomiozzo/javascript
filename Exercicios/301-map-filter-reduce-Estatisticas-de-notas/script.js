@@ -18,9 +18,11 @@ calcBtn.addEventListener("click", () => {
   // });
   const maioresQue7 = dados.filter((nota) => nota > 7);
 
-  const media = dados.reduce((acc, nota) => {
-    return (acc + nota) / dados.length;
+  const soma = dados.reduce((acc, nota) => {
+    return acc + nota;
   });
+
+  const media = soma / dados.length;
 
   const conceito = dados.map((dado) => {
     if (dado >= 9) {

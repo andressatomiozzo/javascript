@@ -14,6 +14,7 @@ const botaoMudar = document.getElementById("botaoMudar");
 
 
 
+
 // MANEIRA MAIS FÁCIL DE MANTER:
 
 let ligado = true;

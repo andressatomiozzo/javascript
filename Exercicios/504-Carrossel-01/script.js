@@ -20,3 +20,4 @@ nextBtn.addEventListener("click", function () {
     console.log(slideAtual);
     update();
 });
+

@@ -1,2 +1,3 @@
-# javascript
- Curso de JavaScript do Curso em Video (Pode ser qualquer coisa)
+# Repositório de estudos - JavaScript
+Este repositório é destinado à exercícios de JavaScript.
+

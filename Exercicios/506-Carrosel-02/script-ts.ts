@@ -1,11 +1,20 @@
 const track = document.querySelector<HTMLDivElement>(".track");
 const prevBtn = document.querySelector<HTMLButtonElement>(".prev");
 const nextBtn = document.querySelector<HTMLButtonElement>(".next");
+const dotsContainer = document.querySelector<HTMLDivElement>(".dots-container");
 
-if (!track || !prevBtn || !nextBtn) throw new Error("Algum elemento não está ligado ao DOM");
+if (!track || !prevBtn || !nextBtn || !dotsContainer) throw new Error("Algum elemento não está ligado ao DOM");
 
 const slides = Array.from(track.children);
 let indexAtual = 0;
+
+//?--------------------  criar as bolinhas --------------------
+
+slides.forEach((slide) => {
+  const dot = document.createElement("div");
+  dot.classList.add("dots");
+  dotsContainer.appendChild(dot);
+});
 
 const update = () => {
   track.style.transform = `translateX(-${indexAtual * 100}%)`;

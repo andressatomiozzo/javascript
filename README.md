@@ -7,12 +7,13 @@ Nesta pasta os arquivos estão divididos em:
 *Exercícios feitos durante o curso de JS do Gustavo Granabara - Curso em Vídeo.
 ### Exercícios de lógica
 *Exercícios feitos para aprimorar a minha lógica em JS. A lista de exercícios foi disponilizada pelo Gustavo Granabara - Curso em Vídeo.
+---
 
 ## Exercicios
 Esta pasta contém diversos mini-projetos pensados para que eu possa melhorar minhas abilidades no JS e no TS. Ela está dividida em:
 ### 101 - 199: DOM e Manipulação Básica
-*Algumas das habilidades adiquiridas:
-   *.innerText e .innerHTML
+-Algumas das habilidades adiquiridas:
+   -.innerText e .innerHTML
    *.style
    *.setAttribute e .removeAttribute
    *.classList -> .add(); .toggle(); .contains(); .remove();

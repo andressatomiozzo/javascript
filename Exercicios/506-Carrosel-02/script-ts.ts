@@ -13,8 +13,10 @@ const update = () => {
 
 prevBtn.addEventListener("click", () => {
   indexAtual = (indexAtual + slides.length - 1) % slides.length;
+  update();
 });
 
 nextBtn.addEventListener("click", () => {
   indexAtual = (indexAtual + 1) % slides.length;
+  update();
 });

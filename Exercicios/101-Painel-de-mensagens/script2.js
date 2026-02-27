@@ -1,16 +1,17 @@
-var nome = document.querySelector("#nome");
-var form = document.querySelector("form");
-var respostasContainer = document.querySelector("#respostas-container");
+"use strict";
+const nome = document.querySelector("#nome");
+const form = document.querySelector("form");
+const respostasContainer = document.querySelector("#respostas-container");
 if (!form)
     throw new Error("Form não encontrado");
-form.addEventListener("submit", function (evento) {
+form.addEventListener("submit", (evento) => {
     evento.preventDefault();
     if (!nome)
         return;
     if (!respostasContainer)
         return;
-    var resposta = document.createElement("p");
-    resposta.innerText = "O nome digitado foi o ".concat(nome.value);
+    const resposta = document.createElement("p");
+    resposta.innerText = `O nome digitado foi o ${nome.value}`;
     respostasContainer.appendChild(resposta);
     nome.value = "";
 });

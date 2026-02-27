@@ -1,23 +1,23 @@
-var track = document.getElementById("track");
-var prevBtn = document.querySelector(".prev");
-var nextBtn = document.querySelector(".next");
-var slideAtual = 0;
-var numTotalDeSlides = 4;
-var update = function () {
+"use strict";
+const track = document.getElementById("track");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+let slideAtual = 0;
+const numTotalDeSlides = 4;
+const update = () => {
     if (!track)
         return;
-    track.style.transform = "translateX(-".concat(slideAtual * 100, "%)");
+    track.style.transform = `translateX(-${slideAtual * 100}%)`;
 };
 if (!prevBtn || !nextBtn)
     throw new Error("Botões faltanto");
-prevBtn.addEventListener("click", function () {
+prevBtn.addEventListener("click", () => {
     slideAtual = (slideAtual + numTotalDeSlides - 1) % numTotalDeSlides;
     console.log(slideAtual);
     update();
 });
-nextBtn.addEventListener("click", function () {
+nextBtn.addEventListener("click", () => {
     slideAtual = (slideAtual + 1) % numTotalDeSlides;
     console.log(slideAtual);
     update();
 });
-

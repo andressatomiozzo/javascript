@@ -1,13 +1,14 @@
-var quadrado = document.querySelector("#quadrado");
-var botaoMudar = document.querySelector("#botaoMudar");
+"use strict";
+const quadrado = document.querySelector("#quadrado");
+const botaoMudar = document.querySelector("#botaoMudar");
 if (!quadrado || !botaoMudar)
     throw new Error("Algum elemento não está ligado ao DOM");
-var cor = ["preto", "vermelho", "rosa"];
-var corIndex = 0;
-botaoMudar.addEventListener("click", function () {
+const cor = ["preto", "vermelho", "rosa"];
+let corIndex = 0;
+botaoMudar.addEventListener("click", () => {
     // quadrado.classList.remove(`${cor[corIndex]}`);
     corIndex = (corIndex + 1) % cor.length;
-    quadrado.setAttribute("class", "".concat(cor[corIndex]));
+    quadrado.setAttribute("class", `${cor[corIndex]}`);
     // quadrado.classList.add(`${cor[corIndex]}`);
 });
 //! o código que está comentado remove (.remove) e depois adiciona (.add) uma classe

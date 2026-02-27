@@ -1,20 +1,21 @@
-var maisBtn = document.querySelector("#mais");
-var menosBtn = document.querySelector("#menos");
-var resposta = document.querySelector("#resposta");
-var numAtual = 0;
+"use strict";
+const maisBtn = document.querySelector("#mais");
+const menosBtn = document.querySelector("#menos");
+const resposta = document.querySelector("#resposta");
+let numAtual = 0;
 if (!maisBtn || !menosBtn)
     throw new Error("Falta algum botão");
-var update = function () {
+const update = () => {
     if (!resposta)
         return;
     resposta.innerText = String(numAtual);
     // resposta.innerText = `${numAtual}`;
 };
-maisBtn.addEventListener("click", function () {
+maisBtn.addEventListener("click", () => {
     numAtual++;
     update();
 });
-menosBtn.addEventListener("click", function () {
+menosBtn.addEventListener("click", () => {
     numAtual--;
     update();
 });

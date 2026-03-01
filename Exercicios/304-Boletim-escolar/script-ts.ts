@@ -7,4 +7,5 @@ const arrayContainer = document.querySelector<HTMLDivElement>("#array-container"
 const calcBtn = document.querySelector<HTMLButtonElement>(".calc");
 const respostaContainer = document.querySelector<HTMLDivElement>("#resposta-container");
 
-if (!nomei || !nota1i || !nota2i || !nota3i || !addBtn || !arrayContainer || !calcBtn || !respostaContainer) throw new Error ("Algum elemento não está ligado ao DOM")
+if (!nomei || !nota1i || !nota2i || !nota3i || !addBtn || !arrayContainer || !calcBtn || !respostaContainer) throw new Error ("Algum elemento não está ligado ao DOM");
+

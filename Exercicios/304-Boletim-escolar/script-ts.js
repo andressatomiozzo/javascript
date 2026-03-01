@@ -32,4 +32,7 @@ calcBtn.addEventListener("click", () => {
         const mediaNotas = soma / d.notas.length;
         return { nome: d.nome, media: mediaNotas };
     });
+    const alunosAprovados = media.filter((d) => d.media >= 7);
+    const somaGeral = media.map((d) => d.media).reduce((acc, d) => acc + d);
+    const mediaGeral = somaGeral / media.length;
 });

@@ -25,5 +25,11 @@ addBtn.addEventListener("click", () => {
         arrayContainer.innerHTML = dados.map((d) => `<p>Nome: ${d.nome}, notas: ${d.notas} </p>`).join(" ");
         arrayContainer.style.color = `black`;
     }
-    console.log(dados);
+});
+calcBtn.addEventListener("click", () => {
+    const media = dados.map((d) => {
+        const soma = d.notas.reduce((acc, n) => acc + n);
+        const mediaNotas = soma / d.notas.length;
+        return { nome: d.nome, media: mediaNotas };
+    });
 });

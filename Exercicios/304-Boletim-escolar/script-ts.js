@@ -25,6 +25,10 @@ addBtn.addEventListener("click", () => {
         arrayContainer.innerHTML = dados.map((d) => `<p>Nome: ${d.nome}, notas: ${d.notas} </p>`).join(" ");
         arrayContainer.style.color = `black`;
     }
+    nomei.value = "";
+    nota1i.value = "";
+    nota2i.value = "";
+    nota3i.value = "";
 });
 calcBtn.addEventListener("click", () => {
     const media = dados.map((d) => {
@@ -35,4 +39,9 @@ calcBtn.addEventListener("click", () => {
     const alunosAprovados = media.filter((d) => d.media >= 7);
     const somaGeral = media.map((d) => d.media).reduce((acc, d) => acc + d);
     const mediaGeral = somaGeral / media.length;
+    respostaContainer.innerHTML = "";
+    respostaContainer.innerHTML = `
+    <p> Alunos aprovados: ${alunosAprovados.length === 0 ? `nenhum` : alunosAprovados.map((d) => d.nome).join(", ")} </p>
+    <p> Média geral da turma: ${mediaGeral.toFixed(2)} </p>
+  `;
 });

@@ -1,18 +1,47 @@
+#carrossel-container {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #carrossel {
-    width: 600px;
-    display: flex;
+  display: flex;
 }
 
 #viewport {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 #track {
-    display: flex;
-    width: 500px;
+  display: flex;
+  width: 500px;
 }
 
 #track img {
-    width: 100%;
-    flex-shrink: 0;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+#dots-container {
+}
+
+.dots {
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgb(231, 231, 231);
+  background-color: rgb(231, 231, 231);
+  border-radius: 999px;
+  margin: 10px;
+}
+
+.dots:hover {
+  border: 1px solid rgb(243, 242, 242);
+  background-color: rgb(211, 211, 211);
+  cursor: pointer;
+}
+
+.active {
+  border: 1px solid rgb(211, 211, 211) ;
+  background-color: rgb(243, 242, 242);
 }

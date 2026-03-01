@@ -5,3 +5,13 @@ const dotsContainer = document.querySelector<HTMLDivElement>("#dots-container");
 
 if (!track || !prevBtn || !nextBtn || !dotsContainer) throw new Error ("Alguma variável não está ligado ao DOM")
 
+let indexAtual = 0
+const indexTotal = Array.from(track.children);
+
+
+indexTotal.forEach((i) => {
+    const dot = document.createElement("button");
+    dot.classList.add("dots");
+    dot.ariaLabel = `Ir para slide ${i}`;
+    dotsContainer.appendChild(dot);
+});

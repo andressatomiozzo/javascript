@@ -8,6 +8,10 @@ if (!track || !prevBtn || !nextBtn || !dotsContainer) throw new Error("Alguma va
 let indexAtual = 0;
 const indexTotal = Array.from(track.children);
 
+const goTo = (i: number) => {
+  track.style.transform = `translateX(-${i * 100}%)`;
+};
+
 indexTotal.forEach((_, i) => {
   const dot = document.createElement("button");
   dot.classList.add("dots");
@@ -17,6 +21,14 @@ indexTotal.forEach((_, i) => {
   goTo(i);
 });
 
-const goTo = (i: number) => {
-  track.style.transform = `translateX(-${i * 100}%)`;
-};
+nextBtn.addEventListener("click", () => {
+  indexAtual = (indexAtual + 1) % indexTotal.length
+  goTo(indexAtual);
+  console.log(indexAtual);
+});
+
+prevBtn.addEventListener("click", () => {
+  indexAtual = (indexAtual + indexTotal.length - 1) % indexTotal.length
+  goTo(indexAtual);
+  console.log(indexAtual);
+});

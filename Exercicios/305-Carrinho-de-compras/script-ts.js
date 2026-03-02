@@ -10,13 +10,14 @@ if (!produtoi || !precoi || !quantidadei || !addBtn || !arrayContainer || !calcB
     throw new Error("Algum elemento não está ligado ao DOM");
 let dados = [];
 addBtn.addEventListener("click", () => {
-    if (produtoi.value === "" || precoi.value === "" || quantidadei.value === "") {
+    if (produtoi.value === "" || precoi.value === "" || quantidadei.value === "" || Number(precoi.value) <= 0 || Number(quantidadei.value) <= 0) {
         arrayContainer.innerHTML = `<p>Preencha todos os campos corretamente</p>`;
         arrayContainer.style.color = "red";
     }
     else {
         dados.push({ produto: produtoi.value, preco: Number(precoi.value), quantidade: Number(quantidadei.value) });
         arrayContainer.innerHTML = dados.map((d) => `<p>Produto: ${d.produto}, preço: R$${d.preco}, quantidade: ${d.quantidade}. </p>`).join("");
+        arrayContainer.style.color = "black";
         produtoi.value = "";
         precoi.value = "";
         quantidadei.value = "";

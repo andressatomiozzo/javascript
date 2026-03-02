@@ -30,13 +30,13 @@ addBtn.addEventListener("click", () => {
 calcBtn.addEventListener("click", () => {
   const quantidade1 = dados.filter((d) => d.quantidade >= 1);
   const subtotal = dados.map((d) => {
-    return{produto: d.produto, subtotal: d.preco * d.quantidade}
+    return { produto: d.produto, subtotal: d.preco * d.quantidade };
   });
   const valorTotal = subtotal.map((d) => d.subtotal).reduce((acc, n) => acc + n);
 
   respostasContainer.innerHTML = `
-    <p>Produtos com mais de 1 item: ${quantidade1.length >= 1? quantidade1.map((d) => d.produto).join(", "): "nenhum"} </p>
+    <p>Produtos com mais de 1 item: ${quantidade1.length >= 1 ? quantidade1.map((d) => d.produto).join(", ") : "nenhum"} </p>
     <p>Subtotal de cada produto: ${subtotal.map((d) => `${d.produto}: ${d.subtotal}`).join(", ")} </p>
     <p>Valor total do carrinho: R$${valorTotal} </p>
-  `
-})
+  `;
+});

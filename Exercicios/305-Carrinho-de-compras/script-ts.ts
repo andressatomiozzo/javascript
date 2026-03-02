@@ -26,3 +26,11 @@ addBtn.addEventListener("click", () => {
     quantidadei.value = "";
   }
 });
+
+calcBtn.addEventListener("click", () => {
+  const quantidade1 = dados.filter((d) => d.quantidade >= 1);
+  const subtotal = dados.map((d) => {
+    return{produto: d.produto, subtotal: d.preco * d.quantidade}
+  });
+  const valotTotal = subtotal.map((d) => d.subtotal).reduce((acc, n) => acc + n);
+})

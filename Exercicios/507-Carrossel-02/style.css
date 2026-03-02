@@ -41,7 +41,7 @@
   cursor: pointer;
 }
 
-.active {
+.dots-active {
   border: 1px solid rgb(211, 211, 211) ;
   background-color: rgb(243, 242, 242);
 }

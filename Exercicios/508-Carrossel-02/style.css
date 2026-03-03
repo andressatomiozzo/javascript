@@ -16,6 +16,7 @@
 .track{
     display: flex;
     width: 300px;
+    transition: transform 0.5s;
 }
 
 .track img {

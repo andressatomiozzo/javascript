@@ -11,7 +11,7 @@ let indiceAtual = 0
 // ? ------------- Criar as bolinhas ----------------
 
 slides.forEach((_, i) => {
-  const dot = document.createElement("div");
+  const dot = document.createElement("button");
   dot.classList.add("dots");
   dot.ariaLabel = `Ir para a imagem ${i+1}`
   dotsContainer.appendChild(dot);
@@ -27,11 +27,22 @@ const goTo = (i:number) => {
 
 // ? ============= Função que passa o slide ============
 
+const dots = document.querySelectorAll<HTMLButtonElement>(".dots")
+
 const update = () => {
   track.style.transform = `translateX(-${indiceAtual * 100}%)`
+
+  dots.forEach((dot, i) => {
+    dot.classList.remove("dots-active")
+    if (i === indiceAtual) {
+      dot.classList.add("dots-active");
+    }
+  })
 }
 
 // ! ------------------- Interação com os botões -----------------
 
 prevBtn.addEventListener("click", () => goTo(indiceAtual - 1));
 nextBtn.addEventListener("click", () => goTo(indiceAtual + 1));
+
+update();

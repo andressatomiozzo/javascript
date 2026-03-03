@@ -13,3 +13,7 @@ addBtn.addEventListener("click", () => {
   listaContainer.appendChild(li);
 })
 
+limparBtn.addEventListener("click", () => {
+  listaContainer.innerHTML = "";
+  contador = 0
+})

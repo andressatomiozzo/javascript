@@ -49,6 +49,8 @@ calcBtn.addEventListener("click", () => {
     const mediaIdades = somaIdades / idades.length;
     const maiorIdade = idades.reduce((acc, d) => Math.max(acc, d));
     const menorIdade = idades.reduce((acc, d) => Math.min(acc, d));
+    const total = [{ media: mediaIdades, maior: maiorIdade, menor: menorIdade }];
+    console.log(total);
     respostasContainer.innerHTML = `
     <p>A soma das idades é ${somaIdades}</p>
     <p>A média das idades é ${mediaIdades.toFixed(2)}</p>

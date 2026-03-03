@@ -58,7 +58,7 @@ calcBtn.addEventListener("click", () => {
   const maiorIdade = idades.reduce((acc, d) => Math.max(acc, d));
   const menorIdade = idades.reduce((acc, d) => Math.min(acc, d));
 
-  const total: {media:number, maior:number, menor:number} [] = [{media: mediaIdades, maior: maiorIdade, menor: menorIdade}]
+  const total: {media:number, maior:number, menor:number} = {media: mediaIdades, maior: maiorIdade, menor: menorIdade}
 
   console.log(total);
 

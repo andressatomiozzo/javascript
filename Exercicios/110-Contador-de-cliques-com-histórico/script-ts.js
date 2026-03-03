@@ -1,0 +1,7 @@
+"use strict";
+const addBtn = document.querySelector("#adicionarBtn");
+const limparBtn = document.querySelector("#limparBtn");
+const listaContainer = document.querySelector("#listaContainer");
+if (!addBtn || !limparBtn || !listaContainer)
+    throw new Error("Algum elemento não está ligado ao DOM");
+let contador = 0;

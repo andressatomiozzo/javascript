@@ -30,3 +30,11 @@ addBtn.addEventListener("click", () => {
     estadoInput.value = "";
   }
 });
+
+calcBtn.addEventListener("click", () => {
+  const maioresIdade = dados.filter((d) => d.idade >= 18);
+  const moramEmSP = dados.filter((d) => d.estado === `SP`);
+  const moramEmSPMaioresIdade = maioresIdade.filter((d) => d.estado === `SP`)
+  
+  respostasContainer.innerHTML = `<p>Pessoas que moram em SP e são maiores de idade: ${moramEmSPMaioresIdade.length === 0? `ninguém` : moramEmSPMaioresIdade.map((d) => d.nome).join(", ")}`
+})

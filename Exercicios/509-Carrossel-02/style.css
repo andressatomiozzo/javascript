@@ -1,0 +1,24 @@
+.carrossel-container {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carrossel {
+    display: flex;
+}
+
+.viewport{
+    overflow: hidden;
+}
+
+.track {
+    display: flex;
+    width: 500px;
+    transition: transform 0.5s;
+}
+
+.track img {
+    width: 100%;
+}

@@ -22,3 +22,15 @@
 .track img {
     width: 100%;
 }
+
+.dots-container {
+    display: flex;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    margin: 10px;
+    border-radius: 999px;
+    background-color: aquamarine;
+}

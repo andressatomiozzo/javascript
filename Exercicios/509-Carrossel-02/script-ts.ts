@@ -8,3 +8,10 @@ if (!track || !prevBtn || !nextBtn || !dotsContainer) throw new Error("Algum ele
 let indexAtual = 0;
 const indexTotal = Array.from(track.children);
 
+indexTotal.forEach((_, i) => {
+  const dot = document.createElement("div");
+  dot.classList.add("dot");
+  dot.ariaLabel = `Ir para a imagem ${i+1}`
+  dotsContainer.appendChild(dot);
+});
+

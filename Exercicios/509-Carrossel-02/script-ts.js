@@ -11,11 +11,15 @@ indexTotal.forEach((_, i) => {
     const dot = document.createElement("div");
     dot.classList.add("dot");
     dot.ariaLabel = `Ir para a imagem ${i + 1}`;
+    dot.addEventListener("click", () => goTo(i));
     dotsContainer.appendChild(dot);
 });
 const dots = document.querySelectorAll(".dot");
 const update = () => {
     track.style.transform = `translateX(-${indexAtual * 100}%)`;
+    dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === indexAtual);
+    });
 };
 const goTo = (i) => {
     indexAtual = (i + indexTotal.length) % indexTotal.length;
@@ -23,3 +27,4 @@ const goTo = (i) => {
 };
 prevBtn.addEventListener("click", () => goTo(indexAtual - 1));
 nextBtn.addEventListener("click", () => goTo(indexAtual + 1));
+update();

@@ -15,3 +15,16 @@ indexTotal.forEach((_, i) => {
   dotsContainer.appendChild(dot);
 });
 
+const dots = document.querySelectorAll<HTMLDivElement>(".dot");
+
+const update = () => {
+  track.style.transform = `translateX(-${indexAtual * 100}%)`
+}
+
+const goTo = (i:number) => {
+  indexAtual = (i + indexTotal.length) % indexTotal.length;
+  update();
+}
+
+prevBtn.addEventListener("click", () => goTo(indexAtual - 1));
+nextBtn.addEventListener("click", () => goTo(indexAtual + 1));

@@ -13,3 +13,13 @@ indexTotal.forEach((_, i) => {
     dot.ariaLabel = `Ir para a imagem ${i + 1}`;
     dotsContainer.appendChild(dot);
 });
+const dots = document.querySelectorAll(".dot");
+const update = () => {
+    track.style.transform = `translateX(-${indexAtual * 100}%)`;
+};
+const goTo = (i) => {
+    indexAtual = (i + indexTotal.length) % indexTotal.length;
+    update();
+};
+prevBtn.addEventListener("click", () => goTo(indexAtual - 1));
+nextBtn.addEventListener("click", () => goTo(indexAtual + 1));

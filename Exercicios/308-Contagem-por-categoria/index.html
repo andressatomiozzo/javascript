@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contagem por categoria</title>
+  </head>
+  <body>
+    <h1>Contagem por categoria</h1>
+    <h2>Objetivo:</h2>
+    <p>Ter um array com objetos do tipo protudo e categoria</p>
+    <p>Usar o reduce para ter no fim um objeto com a quantidade de produtos em cada categoria.</p>
+
+    <h2>Resolução:</h2>
+    <label for="produto">Produto: </label>
+    <input type="text" name="produto" id="produto" />
+    <fieldset>
+      <legend>Categoria</legend>
+      <input type="radio" name="categoria" id="eletro" value="Eletronicos" /> <label for="isxmax">Eletrônico</label>
+      <input type="radio" name="categoria" id="roupa" checked value="Roupas" /> <label for="isxfem">Roupa</label>
+    </fieldset>
+    <button id="add btn">Adicionar</button>
+    <div id="array-container"></div>
+
+    <button>Calcular</button>
+    <div id="respostas-container"></div>
+
+    <script src="script-ts.js"></script>
+  </body>
+</html>

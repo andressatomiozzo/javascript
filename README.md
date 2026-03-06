@@ -44,5 +44,5 @@ Esta pasta contém diversos mini-projetos pensados para que eu possa melhorar mi
 ### 501 - 599: Carrossel
 * A fim de aplicar melhor meus conhecimentos em JS e integrá-los com o HTML e CSS, pratiquei alguns modelos de carrossel:
    * Carrossel 01: 4 imagens com um botão que volta e outro que passa as imagens.
-   * Carrossel 02: 4 imagens, com um botão que volta e outro que passa as imagens além de pequenos botões para direcionar melhor o usuário para qual imagem ele quer ver.
-   * Carrossel 03: 4 imagens, pequenos botões para direcionar melhor o usuário, mas agora os botões anterior e próximo são as próprias imagens.
+   * Carrossel 02: adicional: pequenos botões para direcionar melhor o usuário para qual imagem ele quer ver.
+   * Carrossel 03: adicional: passador automático.

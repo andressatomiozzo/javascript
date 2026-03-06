@@ -15,3 +15,19 @@ indexTotal.forEach((_, i) => {
     dotsCOntainer.appendChild(dot);
 });
 const dots = document.querySelectorAll(".dots");
+const update = () => {
+    track.style.transform = `translateX(-${indexAtual * 100}%)`;
+    dots.forEach((dot, i) => {
+        dot.classList.remove("dots-active");
+        if (i === indexAtual) {
+            dot.classList.add("dots-active");
+        }
+    });
+};
+const goTo = (i) => {
+    indexAtual = (i + indexTotal.length) % indexTotal.length;
+    update();
+};
+prevBtn.addEventListener("click", () => goTo(indexAtual - 1));
+nextBtn.addEventListener("click", () => goTo(indexAtual + 1));
+update();

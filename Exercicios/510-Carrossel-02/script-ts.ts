@@ -18,3 +18,24 @@ indexTotal.forEach((_, i) => {
 })
 
 const dots = document.querySelectorAll<HTMLButtonElement>(".dots");
+
+const update = () => {
+  track.style.transform = `translateX(-${indexAtual * 100}%)`
+
+  dots.forEach((dot, i) => {
+    dot.classList.remove("dots-active");
+    if(i === indexAtual) {
+      dot.classList.add("dots-active")
+    }
+  })
+}
+
+const goTo = (i:number) => {
+  indexAtual = (i + indexTotal.length) % indexTotal.length
+  update();
+}
+
+prevBtn.addEventListener("click", () => goTo(indexAtual - 1));
+nextBtn.addEventListener("click", () => goTo(indexAtual + 1));
+
+update();

@@ -26,7 +26,7 @@
 .dots {
     width: 15px;
     height: 15px;
-    color: burlywood;
+    background-color: burlywood;
 }
 
 .dots:hover {
@@ -34,5 +34,5 @@
 }
 
 .dots-active {
-    border: 1px solid black;
+    border: 1px solid rgb(255, 255, 255);
 }

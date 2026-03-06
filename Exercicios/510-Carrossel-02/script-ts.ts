@@ -1,0 +1,36 @@
+const track = document.querySelector<HTMLDivElement>(".track");
+const prevBtn = document.querySelector<HTMLButtonElement>(".prev");
+const nextBtn = document.querySelector<HTMLButtonElement>(".next");
+const dotsContainer = document.querySelector<HTMLDivElement>(".dots-container");
+
+if (!track || !prevBtn || !nextBtn || !dotsContainer) throw new Error("Algum elemento não está ligado ao DOM");
+
+let indexAtual = 0;
+const indexTotal = Array.from(track.children);
+
+indexTotal.forEach((_, i) => {
+  const dot = document.createElement("div");
+  dot.classList.add("dot");
+  dot.ariaLabel = `Ir para a imagem ${i + 1}`;
+  dot.addEventListener("click", () => goTo(i));
+  dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll<HTMLDivElement>(".dot");
+
+const update = () => {
+  track.style.transform = `translateX(-${indexAtual * 100}%)`;
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === indexAtual);
+  });
+};
+
+const goTo = (i: number) => {
+  indexAtual = (i + indexTotal.length) % indexTotal.length;
+  update();
+};
+
+prevBtn.addEventListener("click", () => goTo(indexAtual - 1));
+nextBtn.addEventListener("click", () => goTo(indexAtual + 1));
+
+update();

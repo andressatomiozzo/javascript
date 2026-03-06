@@ -37,15 +37,15 @@ calcBtn.addEventListener("click", () => {
     }
   });
   respostaContainer.innerHTML = `
-    <p>Números pares menores que 10: ${parMenor10.length === 0? `nenhum` : parMenor10}</p>
-    <p>Números pares maiores ou igual a 10: ${parMaior10.length === 0? `nenhum` : parMaior10}</p>
-    <p>Números ímpares menores que 10: ${imparMenor10.length === 0? `nenhum` : imparMenor10}</p>
-    <p>Números ímpares maiores ou igual a 10: ${imparMaior10.length === 0? `nenhum` : imparMaior10}</p>
+    <p>Números pares menores que 10: ${parMenor10.length === 0 ? `nenhum` : parMenor10}</p>
+    <p>Números pares maiores ou igual a 10: ${parMaior10.length === 0 ? `nenhum` : parMaior10}</p>
+    <p>Números ímpares menores que 10: ${imparMenor10.length === 0 ? `nenhum` : imparMenor10}</p>
+    <p>Números ímpares maiores ou igual a 10: ${imparMaior10.length === 0 ? `nenhum` : imparMaior10}</p>
   `;
 });
 
 resetBtn.addEventListener("click", () => {
   dados = [];
-  arrayContainer.innerText = "Array: "
-  respostaContainer.innerHTML = ""
-})
+  arrayContainer.innerText = "Array: ";
+  respostaContainer.innerHTML = "";
+});

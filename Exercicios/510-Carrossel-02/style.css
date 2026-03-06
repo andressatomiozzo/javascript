@@ -1,0 +1,38 @@
+#carrossel-container {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+}
+
+#carrossel {
+    display: flex;
+}
+
+#viewport {
+    overflow: hidden;
+}
+
+#track {
+    display: flex;
+    width: 500px;
+    transition: transform 0.5s;
+}
+
+#track img {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.dots {
+    width: 15px;
+    height: 15px;
+    color: burlywood;
+}
+
+.dots:hover {
+    cursor: pointer;
+}
+
+.dots-active {
+    border: 1px solid black;
+}

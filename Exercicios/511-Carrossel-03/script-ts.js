@@ -1,12 +1,15 @@
 "use strict";
+const carrossel = document.querySelector("#carrossel");
 const track = document.querySelector("#track");
 const prevBtn = document.querySelector("#prev-btn");
 const nextBtn = document.querySelector("#next-btn");
 const dotsContainer = document.querySelector("#dots-container");
-if (!track || !prevBtn || !nextBtn || !dotsContainer)
+if (!carrossel || !track || !prevBtn || !nextBtn || !dotsContainer)
     throw new Error("Algum elemento não está ligado ao DOM");
 let indexAtual = 0;
 const indexTotal = Array.from(track.children);
+let autoplayId;
+// ? ------------------- DOTS -----------------------
 indexTotal.forEach((_, i) => {
     const dot = document.createElement("button");
     dot.classList.add("dots");
@@ -15,6 +18,7 @@ indexTotal.forEach((_, i) => {
     dotsContainer.appendChild(dot);
 });
 const dots = document.querySelectorAll(".dots");
+// ? ------------------- UPDATE -----------------------
 const update = () => {
     track.style.transform = `translateX(-${indexAtual * 100}%)`;
     dots.forEach((dot, i) => {
@@ -22,11 +26,25 @@ const update = () => {
         if (i === indexAtual)
             dot.classList.add("dots-active");
     });
+    startAutoplay();
 };
+// ? ------------------- goTo -----------------------
 const goTo = (o) => {
     indexAtual = (o + indexTotal.length) % indexTotal.length;
     update();
 };
+// ? ------------------- BOTÕES -----------------------
 prevBtn.addEventListener("click", () => goTo(indexAtual - 1));
 nextBtn.addEventListener("click", () => goTo(indexAtual + 1));
+// * ------------------- AUTOPLAY -----------------------
+const startAutoplay = () => {
+    clearInterval(autoplayId);
+    autoplayId = setInterval(() => goTo(indexAtual + 1), 3000);
+};
+const stopAutoplay = () => {
+    clearInterval(autoplayId);
+};
+// * ------------------- INTERAÇÕES -----------------------
+carrossel.addEventListener("mouseenter", () => stopAutoplay());
+carrossel.addEventListener("mouseleave", () => startAutoplay());
 update();

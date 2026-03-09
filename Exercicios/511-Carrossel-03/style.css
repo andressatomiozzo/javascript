@@ -16,10 +16,24 @@
 #track {
   display: flex;
   width: 400px;
-  transform: transition 0.5s;
+  transition: transform 0.5s;
 }
 
 #track img {
   width: 100%;
   flex-shrink: 0;
+}
+
+.dots {
+  width: 15px;
+  height: 15px;
+  border-radius: 999px;
+}
+
+.dots:hover {
+  cursor: pointer;
+}
+
+.dots-active {
+  background-color: black;
 }

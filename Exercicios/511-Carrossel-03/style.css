@@ -1,25 +1,25 @@
 #carrossel-container {
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  align-items: center;
 }
 
 #carrossel {
-    display: flex;
+  display: flex;
 }
 
 #viewport {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 #track {
-    display: flex;
-    width: 400px;
-    transform: transition 0.5s;
+  display: flex;
+  width: 400px;
+  transform: transition 0.5s;
 }
 
 #track img {
-    width: 100%;
-    flex-shrink: 0;
+  width: 100%;
+  flex-shrink: 0;
 }

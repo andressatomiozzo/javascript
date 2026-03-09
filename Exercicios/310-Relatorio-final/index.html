@@ -21,5 +21,22 @@
     </ul>
 
     <h2>Resolução:</h2>
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome" id="nome">
+    <label for="salario">Salário: R$</label>
+    <input type="number" name="salario" id="salario">
+    <label for="ativo">Situação de pagamento:</label>
+    <select name="ativo" id="ativo">
+      <option value="true">Pago</option>
+      <option value="false">Em atraso</option>
+    </select>
+    <button class="add btn">Adicionar</button>
+
+    <div id="array-container"></div>
+
+    <button class="calc btn">Calcular</button>
+    <div id="respostas-container"></div>
+
+    <script src="script-ts.js"></script>
   </body>
 </html>

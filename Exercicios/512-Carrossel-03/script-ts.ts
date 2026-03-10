@@ -1,12 +1,14 @@
+const carrosselContainer = document.querySelector<HTMLDivElement>(".carrossel-container");
 const track = document.querySelector<HTMLDivElement>(".track");
 const prevBtn = document.querySelector<HTMLButtonElement>(".prev");
 const nextBtn = document.querySelector<HTMLButtonElement>(".next");
 const dotsContainer = document.querySelector<HTMLDivElement>(".dots-container");
 
-if (!track || !prevBtn || !nextBtn || !dotsContainer) throw new Error("Algum elemento não está ligado ao DOM");
+if (!carrosselContainer || !track || !prevBtn || !nextBtn || !dotsContainer) throw new Error("Algum elemento não está ligado ao DOM");
 
 let indexAtual = 0;
 const indexTotal = Array.from(track.children);
+let autoplayId: number;
 
 indexTotal.forEach((_, i) => {
   const dot = document.createElement("button");
@@ -33,7 +35,22 @@ const goTo = (i: number) => {
   update();
 };
 
-prevBtn.addEventListener("click", () => goTo(indexAtual - 1));
-nextBtn.addEventListener("click", () => goTo(indexAtual + 1));
+const startAutoplay = () => {
+  clearInterval(autoplayId);
+  autoplayId = setInterval(() => goTo(indexAtual + 1), 3000);
+};
+const stopAutoplay = () => clearInterval(autoplayId);
+
+prevBtn.addEventListener("click", () => {
+  goTo(indexAtual - 1);
+  stopAutoplay;
+});
+nextBtn.addEventListener("click", () => {
+  goTo(indexAtual + 1);
+  stopAutoplay;
+});
+
+carrosselContainer.addEventListener("mouseenter", () => stopAutoplay());
+carrosselContainer.addEventListener("mouseleave", () => startAutoplay());
 
 update();

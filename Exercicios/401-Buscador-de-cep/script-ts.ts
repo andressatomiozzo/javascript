@@ -18,7 +18,14 @@ const limparInputs = () => {
   estadoInput.value = "";
 };
 
-const preencherDados = (dados) => {
+type data = {
+  logradouro: string;
+  bairro: string;
+  localidade: string;
+  uf: string;
+};
+
+const preencherDados = (dados:data) => {
   logradouroInput.value = dados.logradouro;
   bairroInput.value = dados.bairro;
   cidadeInput.value = dados.localidade;

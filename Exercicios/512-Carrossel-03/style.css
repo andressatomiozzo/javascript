@@ -25,3 +25,22 @@
     flex-shrink: 0;
 }
 
+.dots-container {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.dots {
+    width: 15px;
+    height: 15px;
+}
+
+.dots:hover {
+    cursor: pointer;
+}
+
+.dots-active {
+    background-color: black;
+}

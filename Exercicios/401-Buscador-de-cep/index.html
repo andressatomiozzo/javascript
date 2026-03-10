@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buscador de CEP</title>
+  </head>
+  <body>
+    <h1>Buscador de CEP</h1>
+    <h2>Objetivo:</h2>
+    <ul>
+      <li>Input do CEP → busca em API pública (ex: ViaCEP).</li>
+      <li>Mostra endereço no DOM.</li>
+      <li>Lida com erros e loading.</li>
+    </ul>
+
+    <h2>Resolução:</h2>
+    <form action="">
+      <div>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" />
+      </div>
+      <div>
+        <label for="mail">Email:</label>
+        <input type="email" name="mail" id="mail">
+      </div>
+      <div>
+        <label for="cep">Cep:</label>
+        <input type="number" name="cep" id="cep">
+      </div>
+      <div>
+        <label for="logradouro">Logradouro: </label>
+        <input type="text" name="logradouro" id="logradouro">
+      </div>
+      <div>
+        <label for="numero">Número:</label>
+        <input type="number" name="numero" id="numero">
+      </div>
+      <div>
+        <label for="bairro">Bairro: </label>
+        <input type="text" name="bairro" id="bairro">
+      </div>
+      <div>
+        <label for="cidade">Cidade: </label>
+        <input type="text" name="cidade" id="cidade">
+      </div>
+      <div>
+        <label for="estado">Estado: </label>
+        <input type="text" name="estado" id="estado">
+      </div>
+      <button>Enviar</button>
+    </form>
+  </body>
+</html>

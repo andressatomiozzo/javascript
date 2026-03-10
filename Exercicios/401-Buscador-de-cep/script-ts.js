@@ -10,9 +10,22 @@ const estadoInput = document.querySelector("#estado");
 const alerta = document.querySelector("#alerta");
 if (!nomeInput || !mailInput || !cepInput || !logradouroInput || !numeroInput || !bairroInput || !cidadeInput || !estadoInput || !alerta)
     throw new Error("Algum elemento não está ligado ao DOM");
+const limparInputs = () => {
+    logradouroInput.value = "";
+    bairroInput.value = "";
+    cidadeInput.value = "";
+    estadoInput.value = "";
+};
+const preencherDados = (dados) => {
+    logradouroInput.value = dados.logradouro;
+    bairroInput.value = dados.bairro;
+    cidadeInput.value = dados.localidade;
+    estadoInput.value = dados.uf;
+};
 const eNumero = (numero) => /^[0-9]+$/.test(numero);
 const cepValido = (cep) => cep.length === 8 && eNumero(cep);
 const buscarEndereco = async () => {
+    limparInputs();
     const cep = cepInput.value;
     if (cepValido(cep)) {
         try {
@@ -25,7 +38,7 @@ const buscarEndereco = async () => {
                 alerta.innerText = "Cep não encontrado.";
             }
             else {
-                console.log(dados);
+                preencherDados(dados);
             }
         }
         catch (err) {

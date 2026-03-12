@@ -2,17 +2,18 @@
 const track = document.querySelector("#track");
 const prevBtn = document.querySelector("#prev-btn");
 const nextBtn = document.querySelector("#next-btn");
-const dotsCOntainer = document.querySelector("#dots-container");
-if (!track || !prevBtn || !nextBtn || !dotsCOntainer)
+const dotsContainer = document.querySelector("#dots-container");
+if (!track || !prevBtn || !nextBtn || !dotsContainer)
     throw new Error("Alguma variável não está ligada ao DOM");
 let indexAtual = 0;
 const indexTotal = Array.from(track.children);
+let autoplayId;
 indexTotal.forEach((_, i) => {
     const dot = document.createElement("button");
     dot.ariaLabel = `Ir para a imagem ${i + 1}`;
     dot.classList.add("dots");
     dot.addEventListener("click", () => goTo(i));
-    dotsCOntainer.appendChild(dot);
+    dotsContainer.appendChild(dot);
 });
 const dots = document.querySelectorAll(".dots");
 const update = () => {
@@ -28,6 +29,19 @@ const goTo = (i) => {
     indexAtual = (i + indexTotal.length) % indexTotal.length;
     update();
 };
-prevBtn.addEventListener("click", () => goTo(indexAtual - 1));
-nextBtn.addEventListener("click", () => goTo(indexAtual + 1));
+const startAutoplay = () => {
+    clearInterval(autoplayId);
+    autoplayId = setInterval(() => goTo(indexAtual + 1), 3000);
+};
+const stopAutoplay = () => {
+    clearInterval(autoplayId);
+};
+prevBtn.addEventListener("click", () => {
+    goTo(indexAtual - 1);
+    stopAutoplay();
+});
+nextBtn.addEventListener("click", () => {
+    goTo(indexAtual + 1);
+    stopAutoplay();
+});
 update();

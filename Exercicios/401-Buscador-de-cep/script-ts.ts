@@ -42,6 +42,7 @@ const buscarEndereco = async () => {
     try {
       const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
       const dados = await resposta.json();
+      console.log(dados)
       if (!resposta.ok) {
         throw new Error("Algo deu errado na promisse que busca o CEP");
       } else if (dados.hasOwnProperty("erro")) {

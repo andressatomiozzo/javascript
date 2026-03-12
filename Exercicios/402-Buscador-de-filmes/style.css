@@ -69,3 +69,25 @@ input{
     background-color: var(--cor04);
     color: var(--cor03);
 }
+
+#resposta-container{
+    width: 700px;
+    margin: auto;
+    display: flex;
+}
+
+#resposta-texto {
+    margin: auto;
+}
+
+.hidden{
+    display: none;
+}
+
+.resposta-paragrafos{
+    padding: 5px;
+}
+
+.resposta-paragrafos span {
+    font-weight: bold;
+}

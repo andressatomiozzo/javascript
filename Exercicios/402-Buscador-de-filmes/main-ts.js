@@ -9,12 +9,8 @@ const respostaPoster = document.querySelector("#resposta-poster");
 if (!tituloInput || !anoInput || !pesqBtn || !resetBtn || !respostaPoster || !respostaTexto)
     throw new Error("Algum elemento não está ligado ao DOM");
 const resetarResposta = () => {
-    while (respostaTexto.hasChildNodes()) {
-        respostaTexto.removeChild(respostaTexto.firstChild);
-    }
-    while (respostaPoster.hasChildNodes()) {
-        respostaPoster.removeChild(respostaPoster.firstChild);
-    }
+    respostaTexto.innerHTML = "";
+    respostaPoster.innerHTML = "";
 };
 const criarElementos = () => {
     for (let i = 0; i < 8; i++) {

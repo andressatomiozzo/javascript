@@ -21,12 +21,8 @@ type data = {
 };
 
 const resetarResposta = () => {
-  while (respostaTexto.hasChildNodes()) {
-    respostaTexto.removeChild(respostaTexto.firstChild);
-  }
-  while (respostaPoster.hasChildNodes()) {
-    respostaPoster.removeChild(respostaPoster.firstChild);
-  }
+  respostaTexto.innerHTML = "";
+  respostaPoster.innerHTML = "";
 }
 
 const criarElementos = () =>{

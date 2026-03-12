@@ -1,0 +1,71 @@
+:root{
+    --cor01: rgb(231, 231, 231);
+    --cor02: rgb(53, 53, 53);
+    --cor03: rgb(246, 246, 246);
+    --cor04: rgb(36, 69, 169);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 20px;
+    text-align: center;
+}
+
+h1{
+    margin: 10px;
+}
+
+#instrucao {
+    margin: 10px;
+}
+
+form{
+    height: 120px;
+    width: 700px;
+    padding: 30px;
+    background-color: var(--cor01);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+label {
+    color: var(--cor02);
+}
+
+input{
+    padding: 3px;
+    background-color: var(--cor03);
+    border: 1px solid var(--cor02);
+}
+
+#titulo {
+    width: 250px;
+}
+
+#ano {
+    width: 50px;
+}
+
+.btn {
+        padding: 8px;
+    background-color: var(--cor03);
+    border: 1px solid var(--cor02);
+    color: var(--cor02);
+    border-radius: 5px;
+    margin: 0 10px;
+    font-weight: 600;
+}
+
+.pesq{
+    border: 1px solid var(--cor01);
+    background-color: var(--cor04);
+    color: var(--cor03);
+}

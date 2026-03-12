@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buscador de filmes</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Buscador de filmes</h1>
+    <p id="instrucao">Digite o título do filme e clique em pesquisar, se desejar você também pode escolher o ano que o filme foi lançado parra limitar a busca.</p>
+    <form action="">
+      <div>
+        <label for="titulo" id="l-titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo">
+      </div>
+      <div>
+        <label for="ano" id="l-ano">Ano:</label>
+        <input type="text" id="ano" name="ano">
+      </div>
+      <div>
+        <button class="pesq btn">Pesquisar</button>
+        <button class="reset btn">Resetar</button>
+      </div>
+    </form>
+    <div id="resposta-container"></div>
+  </body>
+</html>

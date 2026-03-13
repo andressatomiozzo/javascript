@@ -7,6 +7,7 @@ if (!track || !prevBtn || !nextBtn || !dotsCOntainer)
     throw new Error("Alguma variável não está ligada ao DOM");
 let indexAtual = 0;
 const indexTotal = Array.from(track.children);
+let autoplayId;
 indexTotal.forEach((_, i) => {
     const dot = document.createElement("button");
     dot.ariaLabel = `Ir para a imagem ${i + 1}`;
@@ -28,6 +29,12 @@ const goTo = (i) => {
     indexAtual = (i + indexTotal.length) % indexTotal.length;
     update();
 };
+const startAutoplay = () => {
+    clearInterval(autoplayId);
+    autoplayId = setInterval(() => goTo(indexAtual + 1), 3000);
+};
+const stopAutoplay = () => clearInterval(autoplayId);
 prevBtn.addEventListener("click", () => goTo(indexAtual - 1));
 nextBtn.addEventListener("click", () => goTo(indexAtual + 1));
+startAutoplay();
 update();

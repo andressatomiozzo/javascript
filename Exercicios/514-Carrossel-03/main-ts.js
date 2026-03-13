@@ -1,9 +1,10 @@
 "use strict";
+const carrosselContainer = document.querySelector("#carrossel-container");
 const track = document.querySelector("#track");
 const prevBtn = document.querySelector("#prev-btn");
 const nextBtn = document.querySelector("#next-btn");
 const dotsCOntainer = document.querySelector("#dots-container");
-if (!track || !prevBtn || !nextBtn || !dotsCOntainer)
+if (!carrosselContainer || !track || !prevBtn || !nextBtn || !dotsCOntainer)
     throw new Error("Alguma variável não está ligada ao DOM");
 let indexAtual = 0;
 const indexTotal = Array.from(track.children);
@@ -29,12 +30,14 @@ const goTo = (i) => {
     indexAtual = (i + indexTotal.length) % indexTotal.length;
     update();
 };
+prevBtn.addEventListener("click", () => goTo(indexAtual - 1));
+nextBtn.addEventListener("click", () => goTo(indexAtual + 1));
 const startAutoplay = () => {
     clearInterval(autoplayId);
     autoplayId = setInterval(() => goTo(indexAtual + 1), 3000);
 };
 const stopAutoplay = () => clearInterval(autoplayId);
-prevBtn.addEventListener("click", () => goTo(indexAtual - 1));
-nextBtn.addEventListener("click", () => goTo(indexAtual + 1));
+carrosselContainer.addEventListener("mouseenter", () => stopAutoplay());
+carrosselContainer.addEventListener("mouseleave", () => startAutoplay());
 startAutoplay();
 update();

@@ -1,42 +1,41 @@
-:root{
-    --cor01: rgb(231, 231, 231);
-    --cor02: rgb(53, 53, 53);
-    --cor03: rgb(246, 246, 246);
-    --cor04: rgb(36, 69, 169);
+:root {
+  --cor01: rgb(231, 231, 231);
+  --cor02: rgb(53, 53, 53);
+  --cor03: rgb(246, 246, 246);
 }
 
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    margin: 20px;
-    text-align: center;
+body {
+  margin: 20px;
+  text-align: center;
 }
 
-h1{
-    margin: 10px;
+h1 {
+  margin: 10px;
 }
 
 #instrucao {
-    margin: 10px;
+  margin: 10px;
 }
 
-form{
-    height: 120px;
-    width: 700px;
-    padding: 30px;
-    margin: 20px auto;
-    background-color: var(--cor01);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
+form {
+  height: 120px;
+  width: 700px;
+  padding: 30px;
+  margin: 20px auto;
+  background-color: var(--cor01);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
 }
 
-label {
+/* label {
     color: var(--cor02);
 }
 
@@ -44,50 +43,28 @@ input{
     padding: 3px;
     background-color: var(--cor03);
     border: 1px solid var(--cor02);
-}
-
-#titulo {
-    width: 250px;
-}
-
-#ano {
-    width: 50px;
-}
+} */
 
 .btn {
-        padding: 8px;
-    background-color: var(--cor03);
-    border: 1px solid var(--cor02);
-    color: var(--cor02);
-    border-radius: 5px;
-    margin: 0 10px;
-    font-weight: 600;
+  padding: 8px;
+  background-color: var(--cor03);
+  border: 1px solid var(--cor02);
+  color: var(--cor02);
+  border-radius: 5px;
+  margin: 0 10px;
+  font-weight: 600;
 }
 
-.pesq{
-    border: 1px solid var(--cor01);
-    background-color: var(--cor04);
-    color: var(--cor03);
+.btn:hover{
+    cursor: pointer;
 }
 
-#resposta-container{
-    width: 700px;
-    margin: auto;
-    display: flex;
+#resposta-container {
+  width: 700px;
+  margin: auto;
 }
 
-#resposta-texto {
-    margin: auto;
-}
-
-.hidden{
-    display: none;
-}
-
-.resposta-paragrafos{
-    padding: 5px;
-}
-
-.resposta-paragrafos span {
-    font-weight: bold;
+#foto {
+  border-radius: 999px;
+  margin: 20px auto;
 }

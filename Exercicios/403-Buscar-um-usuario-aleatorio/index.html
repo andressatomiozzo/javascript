@@ -9,13 +9,19 @@
   <body>
     <h1>Buscar um usuário aleatório</h1>
     <p id="instrucao">Clique no boão "Buscar Usuário" e uma API retornará um uduário aleatório. Tipo Lorem Ipsum, mas para pessoas.</p>
-    <p>Criador da API: Greg Lambert</p>
     <p>Ver mais sobre: <a href="https://randomuser.me/">Random user generator</a></p>
 
     <form action="">
-      <button class="btn">Buscar usuário</button>
+      <button class="buscar btn">Buscar usuário</button>
     </form>
-    <div id="resposta-container"></div>
+    <div id="resposta-container">
+      <img id="foto"></img>
+      <div>
+        <p id="nome"></p>
+        <p id="mail"></p>
+        <p id="pais"></p>
+      </div>
+    </div>
     <script src="main-ts.js"></script>
   </body>
 </html>

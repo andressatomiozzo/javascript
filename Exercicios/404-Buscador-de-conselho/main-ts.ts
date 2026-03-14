@@ -20,7 +20,12 @@ const mostrarDados = (dados: data) => {
 
 const buscarConselho = async () => {
   try {
-    const resposta = await fetch(`https://api.adviceslip.com/advice`);
+    let resposta;
+    if (idInput.value === "") {
+      resposta = await fetch(`https://api.adviceslip.com/advice`);
+    } else {
+      resposta = await fetch(`https://api.adviceslip.com/advice/${idInput.value}`);
+    }
     const dados = await resposta.json();
     if (!resposta.ok) {
       console.log("Algo deu errado na promisse");

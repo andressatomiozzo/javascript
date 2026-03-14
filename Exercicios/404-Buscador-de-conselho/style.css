@@ -1,0 +1,70 @@
+:root {
+  --cor01: rgb(231, 231, 231);
+  --cor02: rgb(53, 53, 53);
+  --cor03: rgb(246, 246, 246);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 10px;
+}
+
+#instrucao {
+  margin: 10px;
+}
+
+form {
+  height: 120px;
+  max-width: 700px;
+  padding: 30px;
+  margin: 20px auto;
+  background-color: var(--cor01);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+label {
+  color: var(--cor02);
+}
+
+input {
+  padding: 3px;
+  background-color: var(--cor03);
+  border: 1px solid var(--cor02);
+}
+
+.btn {
+  padding: 8px;
+  background-color: rgb(49, 69, 167);
+  border: 1px solid var(--cor02);
+  color: var(--cor01);
+  border-radius: 5px;
+  margin: 20px;
+  font-weight: 600;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+#resposta-container {
+  width: 700px;
+  margin: auto;
+}
+
+/* #foto {
+  border-radius: 999px;
+  margin: 20px auto;
+} */

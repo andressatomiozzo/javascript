@@ -1,7 +1,38 @@
 const idInput = document.querySelector<HTMLInputElement>("#numero");
-const gerarBtn = document.querySelector<HTMLButtonElement>(".gerar");
+const form = document.querySelector<HTMLButtonElement>("form");
 const respostaId = document.querySelector<HTMLParagraphElement>("#resposta-id");
 const respostaMensagem = document.querySelector<HTMLParagraphElement>("#resposta-mensagem");
 
-if (!idInput || !gerarBtn || !respostaId || !respostaMensagem) throw new Error("Algum elemento não está ligado ao DOM");
+if (!idInput || !form || !respostaId || !respostaMensagem) throw new Error("Algum elemento não está ligado ao DOM");
 
+type data = {
+  slip: {
+    id: string;
+    advice: string;
+  };
+};
+
+const mostrarDados = (dados: data) => {
+  respostaId.innerText = `Conselho nº ${dados.slip.id}`;
+  respostaMensagem.innerText = `${dados.slip.advice}`;
+  console.log(dados);
+};
+
+const buscarConselho = async () => {
+  try {
+    const resposta = await fetch(`https://api.adviceslip.com/advice`);
+    const dados = await resposta.json();
+    if (!resposta.ok) {
+      console.log("Algo deu errado na promisse");
+    } else {
+      mostrarDados(dados);
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+form.addEventListener("submit", (evento) => {
+  evento.preventDefault();
+  buscarConselho();
+});

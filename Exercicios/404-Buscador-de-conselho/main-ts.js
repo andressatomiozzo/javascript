@@ -29,9 +29,12 @@ const buscarConselho = async () => {
     }
     catch (err) {
         console.log(err);
+        respostaId.innerText = "";
+        respostaMensagem.innerText = "Essa mensagem não existe, verifique o número";
     }
 };
 form.addEventListener("submit", (evento) => {
     evento.preventDefault();
     buscarConselho();
+    idInput.value = "";
 });

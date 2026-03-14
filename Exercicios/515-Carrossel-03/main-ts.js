@@ -1,12 +1,14 @@
 "use strict";
+const carrosselContainer = document.querySelector("#carrossel-container");
 const track = document.querySelector("#track");
 const prevBtn = document.querySelector("#prev-btn");
 const nextBtn = document.querySelector("#next-btn");
 const dotsCOntainer = document.querySelector("#dots-container");
-if (!track || !prevBtn || !nextBtn || !dotsCOntainer)
+if (!carrosselContainer || !track || !prevBtn || !nextBtn || !dotsCOntainer)
     throw new Error("Alguma variável não está ligada ao DOM");
 let indexAtual = 0;
 const indexTotal = Array.from(track.children);
+let autoplayID;
 indexTotal.forEach((_, i) => {
     const dot = document.createElement("button");
     dot.ariaLabel = `Ir para a imagem ${i + 1}`;
@@ -30,4 +32,12 @@ const goTo = (i) => {
 };
 prevBtn.addEventListener("click", () => goTo(indexAtual - 1));
 nextBtn.addEventListener("click", () => goTo(indexAtual + 1));
+const stopAutoplay = () => clearInterval(autoplayID);
+const startAutoplay = () => {
+    clearInterval(autoplayID);
+    autoplayID = setInterval(() => goTo(indexAtual + 1), 3000);
+};
+carrosselContainer.addEventListener("mouseenter", () => stopAutoplay());
+carrosselContainer.addEventListener("mouseleave", () => startAutoplay());
+startAutoplay();
 update();

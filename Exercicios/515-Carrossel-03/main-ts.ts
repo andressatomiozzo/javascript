@@ -1,41 +1,53 @@
+const carrosselContainer = document.querySelector<HTMLDivElement>("#carrossel-container");
 const track = document.querySelector<HTMLDivElement>("#track");
 const prevBtn = document.querySelector<HTMLButtonElement>("#prev-btn");
 const nextBtn = document.querySelector<HTMLButtonElement>("#next-btn");
 const dotsCOntainer = document.querySelector<HTMLDivElement>("#dots-container");
 
-if (!track || !prevBtn || !nextBtn || !dotsCOntainer) throw new Error("Alguma variável não está ligada ao DOM");
+if (!carrosselContainer || !track || !prevBtn || !nextBtn || !dotsCOntainer) throw new Error("Alguma variável não está ligada ao DOM");
 
-let indexAtual = 0
+let indexAtual = 0;
 const indexTotal = Array.from(track.children);
+let autoplayID: number;
 
 indexTotal.forEach((_, i) => {
   const dot = document.createElement("button");
-  dot.ariaLabel = `Ir para a imagem ${i +1}`
+  dot.ariaLabel = `Ir para a imagem ${i + 1}`;
   dot.classList.add("dots");
-  dot.addEventListener("click", () => goTo(i))
+  dot.addEventListener("click", () => goTo(i));
 
   dotsCOntainer.appendChild(dot);
-})
+});
 
 const dots = document.querySelectorAll<HTMLButtonElement>(".dots");
 
 const update = () => {
-  track.style.transform = `translateX(-${indexAtual * 100}%)`
+  track.style.transform = `translateX(-${indexAtual * 100}%)`;
 
   dots.forEach((dot, i) => {
     dot.classList.remove("dots-active");
-    if(i === indexAtual) {
-      dot.classList.add("dots-active")
+    if (i === indexAtual) {
+      dot.classList.add("dots-active");
     }
-  })
-}
+  });
+};
 
-const goTo = (i:number) => {
-  indexAtual = (i + indexTotal.length) % indexTotal.length
+const goTo = (i: number) => {
+  indexAtual = (i + indexTotal.length) % indexTotal.length;
   update();
-}
+};
 
 prevBtn.addEventListener("click", () => goTo(indexAtual - 1));
 nextBtn.addEventListener("click", () => goTo(indexAtual + 1));
 
+const stopAutoplay = () => clearInterval(autoplayID);
+const startAutoplay = () => {
+  clearInterval(autoplayID);
+  autoplayID = setInterval(() => goTo(indexAtual + 1), 3000);
+};
+
+carrosselContainer.addEventListener("mouseenter", () => stopAutoplay());
+carrosselContainer.addEventListener("mouseleave", () => startAutoplay());
+
+startAutoplay();
 update();

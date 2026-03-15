@@ -10,9 +10,18 @@ if (!nomeInput || !form || !alerta || !respostaFoto || !respostaNome || !respost
   throw new Error("Algum elemento não está ligado ao DOM");
 
 const buscarPokemon = async (nome:string) => {
-  const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${nome}`);
-  const dados = await resposta.json();
-  console.log(dados);
+  try {
+    const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${nome}`);
+    const dados = await resposta.json();
+    if(!resposta.ok) {
+    alerta.innerText = `Houve algum problena com a API.`;
+    }
+    console.log(resposta);
+    console.log(dados);
+  } catch(err) {
+    alerta.innerText = `Houve algum problena com a API, verifique se o nome digitado está correto`;
+    console.log(err);
+  }
 };
 
 form.addEventListener("submit", (event) => {

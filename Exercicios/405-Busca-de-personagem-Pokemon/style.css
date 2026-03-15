@@ -64,6 +64,14 @@ input {
   margin: auto;
 }
 
+#alerta {
+  color: red;
+}
+
+#resposta-nome span {
+  text-transform: uppercase;
+}
+
 /* #foto {
   border-radius: 999px;
   margin: 20px auto;

@@ -3,26 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Buscador de Personagem Pokémon</title>
+    <title>Consulta de países</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Buscador de Personagem Pokémon</h1>
-    <p id="instrucao">Digite o nome do Pokémon que deseja ver mais detalhes e clique em "Ver detalhes".</p>
+    <h1>Consulta de países</h1>
+    <p id="instrucao">Digite o nome do país que deseja ver mais detalhes e clique em "Ver detalhes".</p>
     <form action="">
       <div>
-        <label for="nome">Nome do Pokémon:</label>
+        <label for="nome">Nome do país:</label>
         <input type="text" name="nome" id="nome">
       </div>
       <button class="detalhes btn">Ver detalhes</button>
     </form>
     <p id="alerta"></p>
     <div id="resposta-container">
-      <img id="resposta-foto" src="#" alt="">
+      <img id="resposta-bandeira" src="#" alt="">
+      <img id="resposta-maps" src="#" alt="">
       <div>
-        <p id="resposta-nome"></p>
-        <p id="resposta-altura"></p>
-        <p id="resposta-peso"></p>
+        <p id="resposta-nomeOficial"></p>
+        <p id="resposta-capital"></p>
+        <p id="resposta-continente"></p>
+        <p id="resposta-lingua"></p>
       </div>
     </div>
 

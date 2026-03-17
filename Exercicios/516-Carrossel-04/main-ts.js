@@ -6,6 +6,7 @@ if (!carrossel || !imagens || !dotsContainer)
     throw new Error("Alguma variável não está ligada ao DOM");
 let indexAtual = 0;
 const indexTotal = Array.from(carrossel.children);
+let autoplayId;
 indexTotal.forEach((_, i) => {
     const dot = document.createElement("button");
     dot.ariaLabel = `Ir para a imagem ${i + 1}`;
@@ -51,4 +52,12 @@ const goTo = (i) => {
     indexAtual = (i + indexTotal.length) % indexTotal.length;
     update();
 };
+const startAutoplay = () => {
+    clearInterval(autoplayId);
+    autoplayId = setInterval(() => goTo(indexAtual + 1), 5000);
+};
+const stopAutoplay = () => clearInterval(autoplayId);
+carrossel.addEventListener("mouseenter", () => stopAutoplay());
+carrossel.addEventListener("mouseleave", () => startAutoplay());
+startAutoplay();
 update();

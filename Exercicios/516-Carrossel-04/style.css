@@ -18,8 +18,8 @@
   left: 50%;
   width: 60%;
   transform: translate(-50%, -50%) scale(0.8); /* 50% das suas próprias dimensões  */
-  /* opacity: 0; */
-  transition: all 3s ease; /* transição ficar smooth  */
+  opacity: 0;
+  transition: all 1s ease; /* transição ficar smooth  */
   cursor: pointer;
   border-radius: 12px;
   pointer-events: none; /* nenhum cursor  */

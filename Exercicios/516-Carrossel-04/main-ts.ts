@@ -6,6 +6,7 @@ if (!carrossel || !imagens || !dotsContainer) throw new Error("Alguma variável 
 
 let indexAtual = 0;
 const indexTotal = Array.from(carrossel.children);
+let autoplayId: number;
 
 indexTotal.forEach((_, i) => {
   const dot = document.createElement("button");
@@ -58,4 +59,14 @@ const goTo = (i: number) => {
   update();
 };
 
+const startAutoplay = () => {
+  clearInterval(autoplayId);
+  autoplayId = setInterval(() => goTo(indexAtual + 1), 5000);
+};
+const stopAutoplay = () => clearInterval(autoplayId);
+
+carrossel.addEventListener("mouseenter", () => stopAutoplay());
+carrossel.addEventListener("mouseleave", () => startAutoplay());
+
+startAutoplay();
 update();

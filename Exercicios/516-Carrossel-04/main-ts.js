@@ -1,11 +1,11 @@
 "use strict";
-const track = document.querySelector("#track");
+const carrossel = document.querySelector("#carrossel");
 const imagens = document.querySelectorAll(".imagens");
 const dotsContainer = document.querySelector("#dots-container");
-if (!track || !dotsContainer)
+if (!carrossel || !imagens || !dotsContainer)
     throw new Error("Alguma variável não está ligada ao DOM");
 let indexAtual = 0;
-const indexTotal = Array.from(track.children);
+const indexTotal = Array.from(carrossel.children);
 indexTotal.forEach((_, i) => {
     const dot = document.createElement("button");
     dot.ariaLabel = `Ir para a imagem ${i + 1}`;
@@ -15,6 +15,18 @@ indexTotal.forEach((_, i) => {
 });
 const dots = document.querySelectorAll(".dots");
 const update = () => {
+    imagens.forEach((img, i) => {
+        img.classList.remove("prev", "active", "next");
+        if (i === (indexAtual + indexTotal.length - 1) % indexTotal.length) {
+            img.classList.add("prev");
+        }
+        else if (i === indexAtual) {
+            img.classList.add("active");
+        }
+        else if (i === (indexAtual + indexTotal.length + 1) % indexTotal.length) {
+            img.classList.add("next");
+        }
+    });
     dots.forEach((dot, i) => {
         dot.classList.remove("dots-active");
         if (i === indexAtual) {

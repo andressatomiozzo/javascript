@@ -1,11 +1,11 @@
-const track = document.querySelector<HTMLDivElement>("#track");
+const carrossel = document.querySelector<HTMLDivElement>("#carrossel");
 const imagens = document.querySelectorAll<HTMLImageElement>(".imagens");
 const dotsContainer = document.querySelector<HTMLDivElement>("#dots-container");
 
-if (!track || !dotsContainer) throw new Error("Alguma variável não está ligada ao DOM");
+if (!carrossel || !imagens || !dotsContainer) throw new Error("Alguma variável não está ligada ao DOM");
 
 let indexAtual = 0
-const indexTotal = Array.from(track.children);
+const indexTotal = Array.from(carrossel.children);
 
 indexTotal.forEach((_, i) => {
   const dot = document.createElement("button");
@@ -19,7 +19,17 @@ indexTotal.forEach((_, i) => {
 const dots = document.querySelectorAll<HTMLButtonElement>(".dots");
 
 const update = () => {
-  
+  imagens.forEach((img, i) => {
+    img.classList.remove("prev", "active", "next")
+
+    if(i === (indexAtual + indexTotal.length - 1) % indexTotal.length) {
+      img.classList.add("prev")
+    } else if (i === indexAtual) {
+      img.classList.add("active")
+    } else if (i === (indexAtual + indexTotal.length + 1) % indexTotal.length){
+      img.classList.add("next")
+    }
+  })
 
   dots.forEach((dot, i) => {
     dot.classList.remove("dots-active");

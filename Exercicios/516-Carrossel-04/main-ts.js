@@ -14,25 +14,38 @@ indexTotal.forEach((_, i) => {
     dotsContainer.appendChild(dot);
 });
 const dots = document.querySelectorAll(".dots");
-const update = () => {
+const updateSlides = () => {
     imagens.forEach((img, i) => {
-        img.classList.remove("prev", "active", "next");
-        if (i === (indexAtual + indexTotal.length - 1) % indexTotal.length) {
+        img.classList.remove("prev", "active", "next", "hidden");
+        const prevIndex = (indexAtual - 1 + indexTotal.length) % indexTotal.length;
+        const nextIndex = (indexAtual + 1) % indexTotal.length;
+        if (i === prevIndex) {
             img.classList.add("prev");
+            img.addEventListener("click", () => goTo(i));
         }
         else if (i === indexAtual) {
             img.classList.add("active");
         }
-        else if (i === (indexAtual + indexTotal.length + 1) % indexTotal.length) {
+        else if (i === nextIndex) {
             img.classList.add("next");
+            img.addEventListener("click", () => goTo(i));
+        }
+        else {
+            img.classList.add("hidden");
         }
     });
+};
+const updateDots = () => {
     dots.forEach((dot, i) => {
         dot.classList.remove("dots-active");
         if (i === indexAtual) {
             dot.classList.add("dots-active");
         }
     });
+};
+const update = () => {
+    updateSlides();
+    updateDots();
 };
 const goTo = (i) => {
     indexAtual = (i + indexTotal.length) % indexTotal.length;

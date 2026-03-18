@@ -64,13 +64,17 @@ input {
   margin: auto;
 }
 
+#resposta-container div {
+  margin: 30px;
+}
+
 #alerta {
   color: red;
 }
 
-#resposta-nome span {
+/* #resposta-nome span {
   text-transform: uppercase;
-}
+} */
 
 /* #foto {
   border-radius: 999px;

@@ -3,8 +3,13 @@ const tipoEntradaInput = document.querySelector<HTMLSelectElement>("#tipo-entrad
 const tipoSaidaInput = document.querySelector<HTMLSelectElement>("#tipo-saida");
 const form = document.querySelector<HTMLFormElement>("form");
 const alerta = document.querySelector<HTMLParagraphElement>("#alerta");
+const respostaContainer = document.querySelector<HTMLParagraphElement>("#resposta-container");
 
-if (!valorInput || !tipoEntradaInput || !tipoSaidaInput || !form || !alerta) throw new Error("Algum elemento não está ligado ao DOM");
+if (!valorInput || !tipoEntradaInput || !tipoSaidaInput || !form || !alerta || !respostaContainer) throw new Error("Algum elemento não está ligado ao DOM");
+
+const mostrarNaTela = (valorConvertido: number) => {
+  respostaContainer.innerText = `Valor convertido: ${valorConvertido.toFixed(2)}`
+}
 
 type data = {
   [key: string]: {
@@ -19,6 +24,7 @@ const converterValorLogica = (dados: data) => {
   const valorConvertido = Number(valorInput.value) * dados[entrada]?.[saida];
 
   console.log(valorConvertido)
+  mostrarNaTela(valorConvertido);
 };
 
 const converterValor = async () => {

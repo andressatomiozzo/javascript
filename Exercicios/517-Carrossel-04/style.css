@@ -1,33 +1,72 @@
 #carrossel-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  margin: auto;
 }
 
 #carrossel {
-    display: flex;
+  width: 700px;
+  height: 350px;
+  position: relative;
 }
 
-#track img {
-    width: 100%;
-    flex-shrink: 0;
+.carrossel-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  transform: translate(-50%, -50%) scale(0.8); /* 50% das suas próprias dimensões  */
+  opacity: 0;
+  transition: all 1s ease; /* transição ficar smooth  */
+  cursor: pointer;
+  border-radius: 12px;
+  pointer-events: none; /* nenhum cursor  */
+}
+
+.hidden {
+  /* transform: translate(-250%, -50%) scale(0.6);   -   Caso eu tenha 5 slides*/
+  opacity: 0;
+}
+
+.prev {
+  transform: translate(-120%, -50%) scale(0.75);
+  opacity: 0.5;
+  z-index: 2;
+  filter: brightness(0.6);
+  pointer-events: auto;
+}
+
+.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 2;
+  z-index: 3;
+  filter: brightness(1);
+  pointer-events: auto;
+}
+
+.next {
+  transform: translate(20%, -50%) scale(0.75);
+  opacity: 0.5;
+  z-index: 2;
+  filter: brightness(0.6);
+  pointer-events: auto;
 }
 
 .dots {
-    width: 15px;
-    height: 15px;
-    border-radius: 999px;
-    background-color: burlywood;
-    border: 1px solid rgb(96, 80, 60);
-    margin: 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 999px;
+  background-color: burlywood;
+  border: 1px solid rgb(96, 80, 60);
+  margin: 5px;
 }
 
 .dots:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .dots-active {
-    background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
-

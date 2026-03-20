@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tradutor de moedas simples</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Tradutor de moedas simples</h1>
+    <p id="instrucao">Digite o valor e selecione os tipos de moeda.</p>
+    <form action="">
+      <div>
+        <label for="valor">Valor</label>
+        <input type="text" name="valor" id="valor" />
+      </div>
+      <div>
+        <label for="tipo-entrada">Converter de</label>
+        <select name="tipo-entrada" id="tipo-entrada">
+          <option value="brl">Real (BRL)</option>
+          <option value="usd">Dólar dos Estados Unidos (USD)</option>
+          <option value="eur">Euro (EUR)</option>
+        </select>
+      </div>
+      <div>
+        <label for="tipo-saida">Para</label>
+        <select name="tipo-saida" id="tipo-saida">
+          <option value="brl">Real (BRL)</option>
+          <option value="usd">Dólar dos Estados Unidos (USD)</option>
+          <option value="eur">Euro (EUR)</option>
+        </select>
+      </div>
+      <button class="converter btn">Converter</button>
+    </form>
+    <p id="alerta"></p>
+    <div id="resposta-container"></div>
+
+    <script src="main-ts.js"></script>
+  </body>
+</html>

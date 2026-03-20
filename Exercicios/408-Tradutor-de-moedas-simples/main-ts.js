@@ -6,6 +6,12 @@ const form = document.querySelector("form");
 const alerta = document.querySelector("#alerta");
 if (!valorInput || !tipoEntradaInput || !tipoSaidaInput || !form || !alerta)
     throw new Error("Algum elemento não está ligado ao DOM");
+const converterValorLogica = (dados) => {
+    const entrada = tipoEntradaInput.value;
+    const saida = tipoSaidaInput.value;
+    const valorConvertido = Number(valorInput.value) * dados[entrada]?.[saida];
+    console.log(valorConvertido);
+};
 const converterValor = async () => {
     try {
         const resposta = await fetch(`https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${tipoEntradaInput.value}.json`);
@@ -14,8 +20,7 @@ const converterValor = async () => {
         }
         else {
             const dados = await resposta.json();
-            console.log(resposta);
-            console.log(dados);
+            converterValorLogica(dados);
         }
     }
     catch (err) {

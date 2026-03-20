@@ -43,4 +43,10 @@ const goTo = (i) => {
     indexAtual = (i + indexTotal.length) % indexTotal.length;
     update();
 };
+const startAutoplay = () => {
+    clearInterval(autoplayId);
+    autoplayId = setInterval(() => goTo(indexAtual + 1), 3000);
+};
+const stopAutoplay = () => clearInterval(autoplayId);
+startAutoplay();
 update();

@@ -5,6 +5,9 @@ const lonInput = document.querySelector("#lon");
 const form = document.querySelector("form");
 const alerta = document.querySelector("#alerta");
 const respostaContainer = document.querySelector("#resposta-container");
+const respostaCidade = document.querySelector("#cidade-resposta");
+const respostaLat = document.querySelector("#lat-resposta");
+const respostaLon = document.querySelector("#lon-resposta");
 const tempo = document.querySelector("#tempo");
 const temperatura = document.querySelector("#temperatura");
 const sensacaoTermica = document.querySelector("#sensacao-termica");
@@ -17,6 +20,9 @@ if (!cidadeInput ||
     !form ||
     !alerta ||
     !respostaContainer ||
+    !respostaCidade ||
+    !respostaLat ||
+    !respostaLon ||
     !tempo ||
     !temperatura ||
     !sensacaoTermica ||
@@ -24,7 +30,22 @@ if (!cidadeInput ||
     !tempMin ||
     !umidade)
     throw new Error("Alguma variável não está ligada ao DOM");
+const resetar = () => {
+    alerta.innerText = "";
+    respostaCidade.innerText = "";
+    respostaLat.innerText = "";
+    respostaLon.innerText = "";
+    tempo.innerText = "";
+    temperatura.innerText = "";
+    sensacaoTermica.innerText = "";
+    tempMax.innerText = "";
+    tempMin.innerText = "";
+    umidade.innerText = "";
+};
 const mostrarDados = (dados) => {
+    respostaCidade.innerText = `Cidade: ${dados.name}`;
+    respostaLat.innerText = `Latitude: ${dados.coord.lat}`;
+    respostaLon.innerText = `Longitude: ${dados.coord.lon}`;
     tempo.innerText = `Tempo: ${dados.weather[0].main}`;
     temperatura.innerText = `Temperatura: ${(dados.main.temp - 273.15).toFixed(2)}ºC`;
     sensacaoTermica.innerText = `Sensação térmica: ${(dados.main.feels_like - 273.15).toFixed(2)}ºC`;
@@ -70,9 +91,15 @@ const buscarClimaCidade = async (cidade) => {
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     if (cidadeInput.value === "" && latInput.value !== "" && lonInput.value !== "") {
+        resetar();
         buscarClimaLatLon(Number(latInput.value), Number(lonInput.value));
     }
     else if (cidadeInput.value !== "" && latInput.value === "" && lonInput.value === "") {
+        resetar();
         buscarClimaCidade(cidadeInput.value);
+    }
+    else {
+        resetar();
+        alerta.innerText = "Digite o nome da cidade OU as coordenadas.";
     }
 });

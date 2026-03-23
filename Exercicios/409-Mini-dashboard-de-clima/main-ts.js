@@ -24,6 +24,14 @@ if (!cidadeInput ||
     !tempMin ||
     !umidade)
     throw new Error("Alguma variável não está ligada ao DOM");
+const mostrarDados = (dados) => {
+    tempo.innerText = `Tempo: ${dados.weather[0].main}`;
+    temperatura.innerText = `Temperatura: ${(dados.main.temp - 273.15).toFixed(2)}ºC`;
+    sensacaoTermica.innerText = `Sensação térmica: ${(dados.main.feels_like - 273.15).toFixed(2)}ºC`;
+    tempMax.innerText = `Temperatura mínima: ${(dados.main.temp_min - 273.15).toFixed(2)}ºC`;
+    tempMin.innerText = `Temperatura máxima: ${(dados.main.temp_max - 273.15).toFixed(2)}ºC`;
+    umidade.innerText = `Umidade: ${dados.main.humidity}`;
+};
 const minhaKey = `af0c221d7e46cecd00f11fbb9eb17c63`;
 const buscarClimaLatLon = async (lat, lon) => {
     try {
@@ -34,6 +42,7 @@ const buscarClimaLatLon = async (lat, lon) => {
         else {
             const dados = await resposta.json();
             console.log(dados);
+            mostrarDados(dados);
         }
     }
     catch (err) {
@@ -49,6 +58,7 @@ const buscarClimaCidade = async (cidade) => {
         }
         else {
             const dados = await resposta.json();
+            mostrarDados(dados);
             console.log(dados);
         }
     }

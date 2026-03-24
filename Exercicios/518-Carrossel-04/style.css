@@ -20,9 +20,9 @@
   transform: translate(-50%, -50%) scale(0.8);
   border-radius: 12px;
   cursor: pointer;
-  transition: all 1 ease;
+  transition: all 1s ease;
   pointer-events: none;
-  /* opacity: 0; */
+  opacity: 0;
 }
 
 .hidden {

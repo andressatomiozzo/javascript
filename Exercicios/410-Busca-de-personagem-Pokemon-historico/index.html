@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buscador de Personagem Pokémon</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Buscador de Personagem Pokémon</h1>
+    <p id="instrucao">Digite o nome do Pokémon que deseja ver mais detalhes e clique em "Ver detalhes".</p>
+    <form action="">
+      <div>
+        <label for="nome">Nome do Pokémon:</label>
+        <input type="text" name="nome" id="nome" />
+      </div>
+      <button class="detalhes btn">Ver detalhes</button>
+    </form>
+    <p id="alerta"></p>
+    <div id="resposta-container">
+      <article>
+        <p>Resposta:</p>
+        <img id="resposta-foto" src="#" alt="" />
+        <div>
+          <p id="resposta-nome"></p>
+          <p id="resposta-altura"></p>
+          <p id="resposta-peso"></p>
+        </div>
+      </article>
+      <asside>
+        <p>Histórico:</p>
+        <div id="historico-container"></div>
+      </asside>
+    </div>
+
+    <script src="main-ts.js"></script>
+  </body>
+</html>

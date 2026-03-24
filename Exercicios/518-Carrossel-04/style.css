@@ -49,3 +49,25 @@
   z-index: 2;
   pointer-events: auto;
 }
+
+.dots-container {
+    display: flex;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 999px;
+    margin: 0px 5px;
+    border: 1px solid black;
+
+}
+
+.dot:hover {
+    background-color: rgb(204, 204, 204);
+    cursor: pointer;
+}
+
+.dot-active {
+    background-color: black;
+}

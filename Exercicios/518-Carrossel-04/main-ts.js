@@ -6,6 +6,7 @@ if (!carrossel || !carrosselImg || !dotsContainer)
     throw new Error("Algum elemento não está ligado ao DOM");
 let indexAtual = 0;
 const indexTotal = carrosselImg.length;
+let autoplayId;
 carrosselImg.forEach((img, i) => {
     const dot = document.createElement("button");
     dot.classList.add("dot");
@@ -48,4 +49,12 @@ const goTo = (index) => {
     indexAtual = (index + indexTotal) % indexTotal;
     update();
 };
+const stopAutoplay = () => clearInterval(autoplayId);
+const startAutoplay = () => {
+    clearInterval(autoplayId);
+    autoplayId = setInterval(() => goTo(indexAtual + 1), 3000);
+};
+carrossel.addEventListener("mouseenter", () => stopAutoplay());
+carrossel.addEventListener("mouseleave", () => startAutoplay());
+startAutoplay();
 update();

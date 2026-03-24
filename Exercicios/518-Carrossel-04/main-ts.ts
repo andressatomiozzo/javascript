@@ -6,15 +6,16 @@ if (!carrossel || !carrosselImg || !dotsContainer) throw new Error("Algum elemen
 
 let indexAtual = 0;
 const indexTotal = carrosselImg.length;
+let autoplayId:number;
 
 carrosselImg.forEach((img, i) => {
   const dot = document.createElement("button");
   dot.classList.add("dot");
   dot.ariaLabel = `Ir para a imagem ${i + 1}`;
-
+  
   dot.addEventListener("click", () => goTo(i));
   img.addEventListener("click", () => goTo(i))
-
+  
   dotsContainer.appendChild(dot);
 });
 
@@ -54,4 +55,14 @@ const goTo = (index: number) => {
   update();
 };
 
+const stopAutoplay = () => clearInterval(autoplayId);
+const startAutoplay = () => {
+  clearInterval(autoplayId);
+  autoplayId = setInterval(() => goTo(indexAtual + 1), 3000)
+}
+
+carrossel.addEventListener("mouseenter", () => stopAutoplay());
+carrossel.addEventListener("mouseleave", () => startAutoplay());
+
+startAutoplay();
 update();

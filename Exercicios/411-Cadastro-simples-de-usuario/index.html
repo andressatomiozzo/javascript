@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro simples de usuário</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Cadastro simples de usuário</h1>
+    <p id="instrucao">Digite seu nome, e-mail e clique em "Enviar".</p>
+    <form action="">
+      <div>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" />
+      </div>
+      <div>
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email">
+      </div>
+      <button class="enviar btn">Enviar</button>
+    </form>
+    <p id="alerta"></p>
+    <p id="resposta-container"></p>
+
+    <script src="main-ts.js"></script>
+  </body>
+</html>

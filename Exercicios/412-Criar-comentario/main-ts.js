@@ -8,7 +8,7 @@ if (!nomeInput || !mensagemInput || !form || !alerta || !respostaContainer)
     throw new Error("Algum elemento não está ligado ao DOM!");
 const enviarComentario = async () => {
     try {
-        const resposta = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit`, {
+        const resposta = await fetch(`https://jsonplaceholder.typicode.com/posts`, {
             method: "POST",
             headers: { "Content-type": "aplication/json" },
             body: JSON.stringify({
@@ -20,7 +20,7 @@ const enviarComentario = async () => {
         if (!resposta.ok) {
             throw new Error(dados);
         }
-        console.log(`Dados enviados: Nome: ${nomeInput.value}, Comentário: ${mensagemInput.value}`);
+        console.log(`Dados enviados com sucesso: Nome: ${nomeInput.value}, Comentário: ${mensagemInput.value}`);
         nomeInput.value = "";
         mensagemInput.value = "";
     }

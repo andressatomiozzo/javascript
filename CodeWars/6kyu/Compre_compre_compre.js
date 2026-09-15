@@ -60,8 +60,7 @@ function shoppingSpree(p, shop) {
         paidItems.push(cost);
         paidItems.sort((a, b) => b - a);
       }
-    }
-    else {
+    } else {
       return i;
     }
   }

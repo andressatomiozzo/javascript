@@ -9,12 +9,25 @@
 //        50 |        51
 // 1 000 000 | 1 000 000
 
-function sxore(n) {
-  let r = 0
-  for(let i = 1; i <= n; i++) {
-    r = r ^ i; 
+// function sxore(n) {
+//   let r = 0
+//   for(let i = 1; i <= n; i++) {
+//     r = r ^ i; 
+//   }
+//   return r;
+// }
+
+const sxore = (n) => {
+  switch (n % 4) {
+    case 0:
+      return n;
+    case 1:
+      return 1;
+    case 2:
+      return n + 1;
+    case 3:
+      return 0;
   }
-  return r;
 }
 
-console.log(sxore(50))
+console.log(sxore(9))
